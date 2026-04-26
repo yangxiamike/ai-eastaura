@@ -1,0 +1,6 @@
+# Reference projects
+ai-marketing-system/
+
+# Local/editor noise
+.DS_Store
+Thumbs.db
