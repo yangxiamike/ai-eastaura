@@ -18,6 +18,7 @@
 
 ## 目录结构
 
+- `AGENTS.md`：Agent 协作规则和回复风格。
 - `README.md`：项目整体说明。
 - `ARCHITECTURE.md`：业务模块与关键设计决策。
 - `CONTEXT.md`：当前进度、决定、阻塞和下一步。
