@@ -1,0 +1,69 @@
+name: verify
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+  notification-smoke:
+    runs-on: ubuntu-latest
+    needs: quality
+    if: ${{ secrets.FEISHU_WEBHOOK_URL != '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Start API
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_BOT_SECRET: ${{ secrets.FEISHU_BOT_SECRET }}
+          EASTAURA_ALLOW_OPEN_ADMIN_API: "true"
+        run: |
+          nohup npm run start -- --hostname 127.0.0.1 --port 3000 >/tmp/eastaura.log 2>/tmp/eastaura.err.log &
+          for i in {1..30}; do
+            if curl -sf http://127.0.0.1:3000/api/health >/tmp/health.json; then
+              cat /tmp/health.json
+              break
+            fi
+            sleep 1
+          done
+
+      - name: Verify Feishu channel
+        env:
+          E2E_ROOT_URL: http://127.0.0.1:3000
+          EXPECT_NOTIFICATION_CHANNELS: feishu
+        run: npm run verify:notification-channels

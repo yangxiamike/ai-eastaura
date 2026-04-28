@@ -7,8 +7,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start:clean": "powershell -ExecutionPolicy Bypass -File scripts/start-root-clean.ps1 -Mode start -Port 3000",
+    "start:clean:3010": "powershell -ExecutionPolicy Bypass -File scripts/start-root-clean.ps1 -Mode start -Port 3010",
+    "dev:clean": "powershell -ExecutionPolicy Bypass -File scripts/start-root-clean.ps1 -Mode dev -Port 3000",
+    "dev:clean:3010": "powershell -ExecutionPolicy Bypass -File scripts/start-root-clean.ps1 -Mode dev -Port 3010",
+    "workbench:dev:clean": "powershell -ExecutionPolicy Bypass -File scripts/start-workbench-clean.ps1 -Mode dev -Port 5182",
     "typecheck": "tsc --noEmit",
-    "verify:intake-flow": "node scripts/e2e-intake-workbench.cjs"
+    "verify:intake-flow": "node scripts/e2e-intake-workbench.cjs",
+    "verify:workbench-proxy": "node scripts/verify-workbench-proxy.cjs",
+    "verify:content-pipeline": "node scripts/verify-content-pipeline.cjs",
+    "verify:notification-channels": "node scripts/verify-notification-channels.cjs",
+    "verify:all": "node scripts/verify-all.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.104.1",

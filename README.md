@@ -17,6 +17,13 @@ npm run dev
 
 默认服务地址：`http://localhost:3000`。
 
+若本机存在旧进程抢占端口，可用：
+
+```powershell
+npm run dev:clean
+npm run workbench:dev:clean
+```
+
 Workbench 本地联调：
 
 ```powershell
@@ -27,6 +34,16 @@ npm run dev -- --hostname 127.0.0.1 --port 5182
 ```
 
 Workbench 服务地址：`http://127.0.0.1:5182/workbench`。如果根项目配置了 `EASTAURA_ADMIN_API_TOKEN`，Workbench 进程也需要配置同名环境变量，token 只会在服务端代理中使用。
+
+内容生产管道 P0 复验建议使用干净根服务端口，避免本机旧 `:3000` 实例混淆：
+
+```powershell
+npm run start:clean:3010
+cd workbecnch-ui-2/app-old
+$env:EASTAURA_API_BASE_URL="http://127.0.0.1:3010"
+$env:EASTAURA_ADMIN_API_TOKEN="<same-as-root>"
+npm run dev -- --hostname 127.0.0.1 --port 5182
+```
 
 公开 Website 路由：
 
@@ -93,20 +110,62 @@ $env:FEISHU_BOT_SECRET="..."
 npm run typecheck
 npm run build
 npm run start
+npm run start:clean
+npm run start:clean:3010
 npm run verify:intake-flow
+npm run verify:workbench-proxy
+npm run verify:content-pipeline
+npm run verify:notification-channels
+npm run verify:all
 ```
 
 `verify:intake-flow` 会执行从 `/intake` 提交到 Workbench（Dashboard / Leads / Lead Detail / Notifications）的端到端点击流验收，并输出 JSON 结果。  
+`verify:workbench-proxy` 会检查 Workbench 代理关键 API（dashboard/leads/notifications/content/review/attribution）是否 200 且 `usingFallback=false`。  
+`verify:content-pipeline` 默认打 `http://127.0.0.1:3010`，会创建唯一 runId 的 campaign/content asset，跑脚本、分镜、合规审核、人工批准、发布记录、带 UTM intake、lead_submit metric 和 attribution 汇总，并输出 JSON 结果。  
+`verify:notification-channels` 会执行一次真实 intake，并根据 `/api/health.notificationChannels` 校验通知通道是否按预期创建与投递。  
+`verify:all` 会顺序执行 `typecheck -> verify:workbench-proxy -> verify:notification-channels`（可用 `VERIFY_INCLUDE_INTAKE_FLOW=true` 追加浏览器 E2E）。  
+若你希望在 CI 或本地“强制要求外发通道必须可用”，可加：
+
+```powershell
+$env:EXPECT_NOTIFICATION_CHANNELS="feishu"
+npm run verify:notification-channels
+```
+
+或：
+
+```powershell
+$env:EXPECT_NOTIFICATION_CHANNELS="email,feishu"
+npm run verify:notification-channels
+```
+
+若要验证双通道，需同时配置：
+
+```powershell
+RESEND_API_KEY=...
+EASTAURA_NOTIFICATION_FROM=...
+EASTAURA_NOTIFICATION_TO=...
+FEISHU_WEBHOOK_URL=...
+```
+
 可选环境变量：
 
 ```powershell
-$env:E2E_ROOT_URL="http://127.0.0.1:3000"
+$env:E2E_ROOT_URL="http://127.0.0.1:3010"
 $env:E2E_WORKBENCH_URL="http://127.0.0.1:5182/workbench"
+```
+
+外发通知最小配置（示例）：
+
+```powershell
+$env:FEISHU_WEBHOOK_URL="https://open.feishu.cn/open-apis/bot/v2/hook/..."
+# 若机器人启用了签名，再配置：
+$env:FEISHU_BOT_SECRET="..."
 ```
 
 常用 API：
 
 - `GET /api/health`：服务健康检查。
+  响应包含 `notificationChannels` 以及 `notificationConfigState`（仅布尔状态，不含密钥明文），可用于快速判断 feishu/email 是否已被服务进程加载。
 - `POST /api/feishu/events`：飞书自建应用机器人事件回调，支持 URL 校验和基础命令回复。
 - `POST /api/intake`：提交 Intake，创建 lead、AI run 和通知记录。
 - `GET /api/dashboard/stats`：Workbench Dashboard 聚合数据，内部 API。
@@ -131,6 +190,10 @@ $env:E2E_WORKBENCH_URL="http://127.0.0.1:5182/workbench"
 - `GET /api/content-attribution`：按 campaign/source/channel 汇总内容归因。
 
 Workbench 内部代理 API 位于 `workbecnch-ui-2/app-old/src/app/api/workbench/`，浏览器只访问 `/api/workbench/*`，由 Workbench 服务端读取 `EASTAURA_API_BASE_URL` 和 `EASTAURA_ADMIN_API_TOKEN` 后转发到根项目 API。
+
+CI 已内置 `.github/workflows/verify.yml`：
+- 默认执行 `typecheck + build`
+- 若仓库 Secret 存在 `FEISHU_WEBHOOK_URL`（可选 `FEISHU_BOT_SECRET`），会额外执行飞书通知强校验
 
 ## 目录结构
 
