@@ -22,6 +22,7 @@
 2026-04-28 补充（默认端口 3000 复验通过）：清理 `:3000` 旧监听后，在 `:3000` 启动最新构建实例并执行 `EXPECT_NOTIFICATION_CHANNELS=feishu npm run verify:notification-channels`，结果同样为 `DONE`，`/api/health` 显示 `notificationChannels=["in_app","feishu"]`。注意：当前 Codex 终端环境可能在命令结束后回收后台进程，需用“启动+验收同一命令窗口”或本地常驻终端运行服务。
 2026-04-28 补充（回归与运维固化）：新增 `scripts/start-root-clean.ps1`（清端口并启动 root，输出 health）、`scripts/verify-all.cjs`（顺序执行 typecheck/workbench-proxy/notification-channels，可选 intake-flow），并在 `package.json` 增加 `dev:clean`、`start:clean`、`verify:all`。新增 CI 工作流 `.github/workflows/verify.yml`：默认跑 typecheck+build；配置 `FEISHU_WEBHOOK_URL` secret 时自动执行飞书通知强校验。Workbench 发布策略文档已更新为“P0 独立部署已定”，`ARCHITECTURE.md` 与 `README.md` 已同步验收与运维流程。
 2026-04-28 补充（verify:all 实跑）：在 root `:3000` + workbench `:5182` 启动后，执行 `EXPECT_NOTIFICATION_CHANNELS=feishu npm run verify:all`，实际通过 `typecheck -> verify:workbench-proxy -> verify:notification-channels` 全链路，summary `failed=false`。
+2026-04-28 补充（阶段收口与下一步计划）：当前“管道拉通与稳定化”阶段已完成，新增 `docs/NEXT_STEP_PLAN_2026-04-28.md`，将下一阶段拆分为 `P1 业务定盘 -> P2 转化SOP -> P3 官网收敛 -> P4 Workbench收敛 -> P5 内容方向收敛 -> P6 试运营复盘`，用于业务驱动迭代。
 
 本轮已按“内容生成/营销 skill 分类 -> OpenClaw/Hermes 公开 skill 对应 -> prompt 结构摘要 -> Eastaura 改造建议”完成外部 skill 调研，并归档到 `docs/OPENCLAW_HERMES_MARKETING_SKILLS_RESEARCH_2026-04-27.md`。结论：OpenClaw 更像营销 playbook，Hermes 更像可执行 agent 操作手册；Eastaura 后续应重写为自有 `brand_voice_profile`、`content_strategy`、`short_video_script`、`landing_copy`、`content_repurpose`、`visual_prompt`、`cold_outreach`、`review_compliance` skills。
 
