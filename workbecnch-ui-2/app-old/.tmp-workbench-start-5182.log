@@ -1,0 +1,12 @@
+
+> eastaura-app@0.1.0 start
+> next start --hostname 127.0.0.1 --port 5182
+
+
+> eastaura-app@0.1.0 start
+> next start --hostname 127.0.0.1 --port 5182
+
+▲ Next.js 16.2.4
+- Local:         http://127.0.0.1:5182
+- Network:       http://127.0.0.1:5182
+✓ Ready in 101ms

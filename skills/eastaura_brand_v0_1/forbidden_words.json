@@ -1,0 +1,11 @@
+{
+  "version": "v0_1",
+  "forbidden": [
+    "cure",
+    "guarantee",
+    "miracle",
+    "reverse disease",
+    "replace your doctor",
+    "diagnose"
+  ]
+}

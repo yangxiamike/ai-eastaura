@@ -1,0 +1,257 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,74544,e=>{"use strict";let t=(0,e.i(56420).default)("clock",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"M12 6v6l4 2",key:"mmk7yg"}]]);e.s(["Clock",0,t],74544)},96315,e=>{"use strict";let t=(0,e.i(56420).default)("mail",[["path",{d:"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7",key:"132q7q"}],["rect",{x:"2",y:"4",width:"20",height:"16",rx:"2",key:"izxlao"}]]);e.s(["Mail",0,t],96315)},53138,e=>{"use strict";let t=(0,e.i(56420).default)("triangle-alert",[["path",{d:"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",key:"wmoenq"}],["path",{d:"M12 9v4",key:"juzpu7"}],["path",{d:"M12 17h.01",key:"p32p05"}]]);e.s(["AlertTriangle",0,t],53138)},15288,e=>{"use strict";var t=e.i(43476),a=e.i(75157);e.s(["Card",0,function({className:e,size:r="default",...i}){return(0,t.jsx)("div",{"data-slot":"card","data-size":r,className:(0,a.cn)("group/card flex flex-col gap-4 overflow-hidden rounded-xl bg-card py-4 text-sm text-card-foreground ring-1 ring-foreground/10 has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:gap-3 data-[size=sm]:py-3 data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",e),...i})},"CardContent",0,function({className:e,...r}){return(0,t.jsx)("div",{"data-slot":"card-content",className:(0,a.cn)("px-4 group-data-[size=sm]/card:px-3",e),...r})},"CardHeader",0,function({className:e,...r}){return(0,t.jsx)("div",{"data-slot":"card-header",className:(0,a.cn)("group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-t-xl px-4 group-data-[size=sm]/card:px-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-4 group-data-[size=sm]/card:[.border-b]:pb-3",e),...r})},"CardTitle",0,function({className:e,...r}){return(0,t.jsx)("div",{"data-slot":"card-title",className:(0,a.cn)("font-heading text-base leading-snug font-medium group-data-[size=sm]/card:text-sm",e),...r})}])},13537,e=>{"use strict";let t=[{id:"skill_001",name:"Brand Voice",category:"Foundation",updatedAt:"2026-04-20",content:`## Eastaura Brand Voice
+
+### Core Tone
+- Calm, grounded, and quietly confident
+- Never urgent, never salesy
+- Speak as a practitioner, not a marketer
+- Use sensory language: texture, temperature, rhythm, silence
+
+### What We Say
+- "Your body knows how to recover. We create the conditions."
+- "Five days of structured rest, not five days of treatments."
+- "TCM is a system of balance, not a prescription for cure."
+
+### What We Never Say
+- "Cure", "heal", "fix", "treat" (medical claims)
+- "Guaranteed results"
+- "Doctor-approved" (unless literally true and documented)
+- Discount language, urgency scarcity
+
+### Audience Personas
+1. Burned-out executive (35-50, US/EU/Asia)
+2. Wellness-curious professional (30-45, global)
+3. Post-transition seeker (45-60, life change moment)
+
+### Language Rules
+- English: British or neutral international English
+- Avoid wellness jargon unless explained
+- Use concrete specifics over abstract benefits`},{id:"skill_002",name:"Medical Boundary",category:"Compliance",updatedAt:"2026-04-18",content:`## Medical Boundary Policy
+
+### Principle
+Eastaura provides wellness experiences. We do not provide medical diagnosis, treatment, or advice.
+
+### Red Flag Conditions (Require Review)
+- Heart conditions, arrhythmia, hypertension on medication
+- Diabetes on insulin
+- Pregnancy
+- Active cancer treatment
+- Post-surgical (within 6 months)
+- Severe mental health conditions
+
+### Approved Language
+- "Support your body's natural balance"
+- "Create conditions for recovery"
+- "Complement your existing health regimen"
+- "Not a substitute for professional medical care"
+
+### Forbidden Language
+- "Treat", "cure", "heal", "fix"
+- "Will reduce blood pressure"
+- "Cures insomnia"
+- "Alternative to medication"
+
+### Process
+1. AI flags medical keywords in intake
+2. Human reviews flagged leads within 4 hours
+3. If high risk: empathetic decline + referral suggestion
+4. If medium risk: modified offer (non-medical components only)
+5. Document all decisions`},{id:"skill_003",name:"Content Strategy",category:"Marketing",updatedAt:"2026-04-15",content:`## Eastaura Content Strategy
+
+### Goal
+Attract high-intent, high-budget overseas clients through trust-based content.
+
+### Pillars
+1. **Education** — TCM explained simply
+2. **Experience** — POV/immersive content
+3. **Trust** — Transparency, founder story, boundaries
+4. **Proof** — Guest journeys (with permission, anonymous)
+
+### Channel Mix
+- Instagram Reels: 40% (primary discovery)
+- TikTok: 20% (younger audience, brand awareness)
+- YouTube Shorts: 15% (SEO, longer attention)
+- LinkedIn: 15% (executive audience, trust-building)
+- Newsletter: 7% (nurture, conversion)
+- Blog: 3% (SEO, deep education)
+
+### Content Rules
+- 80% value, 20% offer
+- Every piece must answer: "Why should I trust Eastaura with my recovery?"
+- No before/after health claims
+- All guest content is experience-focused, never medical
+- CTA always leads to intake form or discovery call`},{id:"skill_004",name:"Short Video Script Rules",category:"Marketing",updatedAt:"2026-04-22",content:`## Short Video Script Rules
+
+### Format
+- 20-40 seconds for experience clips
+- 60 seconds max for educational content
+- 3-second hook rule: viewer must know value in 3s
+
+### Structure
+1. Hook (0-3s): Visual + text that stops scroll
+2. Context (3-10s): Establish setting/mood
+3. Core (10-25s): Deliver promise from hook
+4. CTA (25-30s): Single clear action
+
+### Visual Style
+- No stock footage
+- Real Eastaura spaces, real practitioners
+- Natural light preferred
+- Slow, intentional pacing
+- Sound design: ambient, no music or very minimal
+
+### Compliance Checks
+- Script must pass medical boundary scan
+- No health claims in text overlays
+- CTA cannot promise outcomes
+- If showing guest: signed release on file
+
+### POV Series Guidelines
+- Always framed as experience, not testimonial
+- Never show guest faces without consent
+- Focus on spaces, rituals, sensory details
+- "You" language: invites imagination, not expectation`},{id:"skill_005",name:"Lead Review Rules",category:"Operations",updatedAt:"2026-04-25",content:`## Lead Review Rules
+
+### Scoring
+- Intent Score (0-100): Based on goal clarity, timeline specificity, budget fit
+- Risk Level: low / medium / high based on medical flags
+
+### Auto-Actions
+- Intent > 80 + Risk LOW → Auto-draft follow-up email
+- Intent > 80 + Risk MEDIUM → Flag for human review
+- Intent 50-80 + Risk LOW → Add to nurture sequence
+- Intent < 50 → Archive with quarterly re-engagement
+- Risk HIGH → Hold, notify founder within 2 hours
+
+### Follow-Up Timing
+- New qualified lead: within 4 hours
+- Post-consultation: within 24 hours
+- Proposal sent: follow-up at 3 days, 7 days, 14 days
+- Nurture: weekly touch for 8 weeks, then monthly
+
+### Data Entry
+- Always log source attribution (campaign, content, channel, UTM)
+- Tag with primary goals for segmentation
+- Note budget range for offer matching
+- Record all interactions in timeline`},{id:"skill_006",name:"Follow-up Email Templates",category:"Operations",updatedAt:"2026-04-21",content:`## Follow-up Email Templates
+
+### Template: New Qualified Lead
+Subject: Your Eastaura intake — next steps
+
+Hi {{name}},
+
+Thank you for sharing your goals with us. Based on what you described — {{primary_goals}} — Eastaura could be a meaningful fit.
+
+A few questions to make sure we're the right choice:
+{{custom_questions}}
+
+If this resonates, the next step is a 20-minute video consultation where we discuss your timeline and what the 5-day structure would look like for your situation.
+
+No pressure. Just clarity.
+
+[Book Consultation]
+
+Warmly,
+{{sender_name}}
+Eastaura
+
+---
+
+### Template: Post-Consultation
+Subject: Your Eastaura proposal
+
+Hi {{name}},
+
+Thank you for the conversation yesterday. I appreciated your honesty about {{noted_concern}}.
+
+Based on our discussion, I've prepared a personalized 5-day protocol:
+{{proposal_summary}}
+
+The investment: {{price_range}}
+Available dates: {{available_dates}}
+
+Take your time reviewing. I'll check in next week if I haven't heard from you.
+
+[View Full Proposal]
+
+Warmly,
+{{sender_name}}
+
+---
+
+### Template: Nurture (Budget Not Ready)
+Subject: No rush — Eastaura will be here
+
+Hi {{name}},
+
+I understand the timing isn't right. That's completely fine.
+
+In the meantime, I'll send you a short monthly note with:
+- One practical TCM tip you can try at home
+- A glimpse of what's happening at Eastaura
+- Early access when we open new seasonal dates
+
+No obligation. Unsubscribe anytime.
+
+Warmly,
+{{sender_name}}`},{id:"skill_007",name:"Notification Priority Rules",category:"Operations",updatedAt:"2026-04-19",content:`## Notification Priority Rules
+
+### Urgent (Immediate)
+- High-risk lead flagged
+- Failed email to scheduled consultation guest
+- Failed AI task blocking publish
+- Security or privacy incident
+
+### High (Within 2 hours)
+- New high-intent lead
+- Content compliance flagged
+- Follow-up overdue by >24 hours
+- Guest question unanswered >12 hours
+
+### Medium (Within 4 hours)
+- New medium-intent lead
+- Script approval needed
+- Daily brief generation
+- System maintenance window
+
+### Low (Within 24 hours)
+- Weekly reports
+- Content performance summaries
+- Nurture sequence status
+- Non-urgent task completions
+
+### Routing
+- Urgent/High: In-app + email + Feishu
+- Medium: In-app + email
+- Low: In-app digest only
+
+### Quiet Hours
+- 22:00 - 07:00 China time: Urgent only
+- Respect lead timezone for email sends`},{id:"skill_008",name:"Scale Operations",category:"Growth",updatedAt:"2026-04-10",content:`## Scale Operations Playbook
+
+### Current Capacity
+- Max 8 guests per week
+- 2 practitioners full-time
+- Founder handles all sales + review
+
+### Scale Triggers
+- Lead volume > 20 qualified/week for 4 weeks
+- Consultation booking rate > 60%
+- Conversion rate > 25%
+
+### Scale Options
+1. **Add Practitioner** — Hire TCM practitioner with English fluency
+2. **Batch Scheduling** — Fixed weekly arrival days (Mon/Wed)
+3. **Assistant Layer** — Virtual assistant for scheduling + basic email
+4. **Group Component** — Optional (not mandatory) group element for efficiency
+
+### Maintain Quality
+- Never exceed 12 guests/week
+- Founder still reviews every lead
+- AI handles draft, human approves all outbound
+- Keep consultation personal, never templated
+
+### Metrics to Watch
+- Guest satisfaction score (target: > 4.8/5)
+- Referral rate (target: > 30%)
+- Staff burnout indicators
+- Lead quality at scale (don't sacrifice fit for volume)`}];e.s(["attributionFunnel",0,[{stage:"Impressions",count:45280,percentage:100},{stage:"Homepage clicks",count:2840,percentage:6.3},{stage:"Website clicks",count:1280,percentage:45.1},{stage:"Intake starts",count:426,percentage:33.3},{stage:"Intake submissions",count:72,percentage:16.9},{stage:"Video consultations",count:18,percentage:25}],"attributionKPIs",0,{totalImpressions:"45,280",siteClicks:"1,280",formSubmissions:72,highIntentLeads:14,videoConsultations:18},"calendarEvents",0,[{id:"cal_001",title:"POV: Arrive in China",channel:"Instagram Reels",day:0,time:"09:00",status:"scheduled",thumbnail:"/workbench/thumbs/scene-arrival.jpg",type:"short_video_script"},{id:"cal_002",title:"Sleep Reset Explained",channel:"YouTube Shorts",day:0,time:"10:30",status:"published",thumbnail:"/workbench/thumbs/scene-tea.jpg",type:"short_video_script"},{id:"cal_003",title:"Trust & Transparency Post",channel:"LinkedIn",day:1,time:"08:00",status:"scheduled",thumbnail:"/workbench/thumbs/linkedin.jpg",type:"linkedin_post"},{id:"cal_004",title:"No Chinese Required",channel:"Instagram Reels",day:1,time:"14:00",status:"draft",thumbnail:"/workbench/thumbs/scene-consult.jpg",type:"short_video_script"},{id:"cal_005",title:"Weekly Brief — Sleep",channel:"Newsletter",day:2,time:"07:00",status:"scheduled",thumbnail:"/workbench/thumbs/newsletter.jpg",type:"newsletter"},{id:"cal_006",title:"5-Day Experience Overview",channel:"TikTok",day:2,time:"12:00",status:"pending",thumbnail:"/workbench/thumbs/scene-pavilion.jpg",type:"short_video_script"},{id:"cal_007",title:"First Consultation Guide",channel:"Blog",day:3,time:"09:00",status:"published",thumbnail:"/workbench/thumbs/scene-consult.jpg",type:"blog"},{id:"cal_008",title:"Stress Recovery POV",channel:"Instagram Reels",day:4,time:"10:00",status:"draft",thumbnail:"/workbench/thumbs/scene-hotel.jpg",type:"short_video_script"},{id:"cal_009",title:"Sleep Reset Shorts",channel:"YouTube Shorts",day:4,time:"15:00",status:"scheduled",thumbnail:"/workbench/thumbs/scene-tea.jpg",type:"short_video_script"},{id:"cal_010",title:"Founder's Story",channel:"LinkedIn",day:5,time:"08:30",status:"scheduled",thumbnail:"/workbench/thumbs/linkedin.jpg",type:"linkedin_post"}],"channelPerformance",0,[{channel:"Instagram Reels",contentCount:12,clicks:182,clickRate:"42.7%",leads:9,leadRate:"50.0%",highIntent:4,suggestion:"Continue POV experience content"},{channel:"TikTok",contentCount:16,clicks:156,clickRate:"36.6%",leads:6,leadRate:"33.3%",highIntent:2,suggestion:"Test stronger hooks in first 1s"},{channel:"YouTube Shorts",contentCount:10,clicks:64,clickRate:"15.0%",leads:2,leadRate:"11.1%",highIntent:1,suggestion:"SEO-optimized titles needed"},{channel:"LinkedIn",contentCount:6,clicks:18,clickRate:"4.2%",leads:1,leadRate:"5.6%",highIntent:0,suggestion:"Longer-form thought leadership"},{channel:"Newsletter",contentCount:4,clicks:6,clickRate:"1.4%",leads:0,leadRate:"0.0%",highIntent:0,suggestion:"Optimize subject lines and CTAs"}],"contentItems",0,[{id:"content_001",title:"POV: You come to China for a quiet wellness reset",type:"short_video_script",channel:"Instagram Reels",campaign:"POV Experience Series Q2",cta:"Fill Intake Form",complianceStatus:"approved",publishStatus:"scheduled",sourceCode:"reels_pov_arrive_001",performanceNotes:"Strong hook in first 3s. Airport-to-tea transition tested well.",createdAt:"2026-04-20",updatedAt:"2026-04-26",thumbnail:"/workbench/thumbs/scene-arrival.jpg",body:"[Scene 1: 0-3s] POV shot: airplane window, clouds over China. Text overlay: 'You finally did it.'\n[Scene 2: 3-8s] Quiet car ride through bamboo-lined road. No music, only ambient sound.\n[Scene 3: 8-15s] Arrival at Eastaura. Tea ceremony. Close-up of steam rising.\n[Scene 4: 15-20s] Practitioner takes pulse. Soft spoken explanation.\n[Scene 5: 20-25s] Sunset view from meditation pavilion. Text: '5 days. No schedule. Just reset.'\n[CTA] Link in bio for intake form.",topics:["POV","Arrival Experience","Quiet Luxury"],platforms:["Instagram","TikTok","YouTube Shorts"]},{id:"content_002",title:"Why Eastaura Doesn't Promise Cures",type:"linkedin_post",channel:"LinkedIn",campaign:"Trust & Transparency Series",cta:"Read Full Position Paper",complianceStatus:"approved",publishStatus:"published",sourceCode:"linkedin_no_cure_001",performanceNotes:"Highest LinkedIn engagement this quarter. 47 shares from wellness professionals.",createdAt:"2026-04-15",updatedAt:"2026-04-18",thumbnail:"/workbench/thumbs/linkedin.jpg",body:"Three reasons Eastaura never promises 'cures':\n\n1. TCM is a system of balance, not a drug protocol\n2. Every body responds differently to herbal support and acupuncture\n3. The retreat is an experience of reset, not a medical intervention\n\nWhat we DO promise: a structured 5-day immersion designed by licensed practitioners, in a setting that removes the stressors preventing your recovery.\n\nThe rest is your body's own intelligence.",topics:["Trust","Medical Boundary","Transparency"],platforms:["LinkedIn"]},{id:"content_003",title:"Stress Recovery Is Not a Vacation",type:"short_video_script",channel:"TikTok",campaign:"Barrier Breaker Series",cta:"Learn the Difference",complianceStatus:"flagged",publishStatus:"review",sourceCode:"tiktok_stress_not_vacay_001",performanceNotes:"Flagged for medical-adjacent language. Revision needed before publish.",createdAt:"2026-04-22",updatedAt:"2026-04-26",thumbnail:"/workbench/thumbs/scene-hotel.jpg",body:"[Scene 1: 0-3s] Split screen: beach resort vs. quiet clinic. Text: 'This is a vacation. This is recovery.'\n[Scene 2: 3-8s] Explain the difference: vacation avoids stress. Recovery addresses it.\n[Scene 3: 8-15s] Show daily rhythm at Eastaura: pulse check, herbal tea, structured rest, acupuncture, evening reflection.\n[Scene 4: 15-20s] Practitioner explains: 'We don't distract you from burnout. We give your nervous system space to downregulate.'\n[CTA] 'Is this what you need?' — link to self-assessment.",topics:["Stress Recovery","Vacation vs Recovery"],platforms:["TikTok","Instagram Reels"]},{id:"content_004",title:"What Happens in Your First TCM Consultation",type:"blog",channel:"Blog",campaign:"Education Series",cta:"Book a Free Discovery Call",complianceStatus:"approved",publishStatus:"published",sourceCode:"blog_first_consult_001",performanceNotes:"Top organic search traffic driver. Avg. 4:30 time on page.",createdAt:"2026-03-20",updatedAt:"2026-04-01",thumbnail:"/workbench/thumbs/scene-consult.jpg",body:"Your first consultation is not a sales pitch. It is a diagnostic conversation.\n\nStep 1: Intake form (submitted 48 hours before)\nStep 2: Pulse diagnosis and tongue observation (15 minutes)\nStep 3: Conversation about sleep, digestion, stress patterns, and goals (30 minutes)\nStep 4: Personalized retreat protocol drafted (delivered within 24 hours)\n\nNo pressure. No upsell. Just clarity on whether Eastaura is the right fit for your situation.",topics:["First Consultation","TCM Process","Education"],platforms:["Blog","Newsletter"]},{id:"content_005",title:"Sleep Reset Explained",type:"short_video_script",channel:"YouTube Shorts",campaign:"Sleep Education Series",cta:"Download Sleep Guide",complianceStatus:"approved",publishStatus:"published",sourceCode:"shorts_sleep_reset_001",performanceNotes:"Strong completion rate. Weak CTA — need to test alternative.",createdAt:"2026-04-10",updatedAt:"2026-04-15",thumbnail:"/workbench/thumbs/scene-tea.jpg",body:"[Scene 1: 0-3s] Time-lapse: person tossing at night vs. sleeping peacefully.\n[Scene 2: 3-8s] 'Sleep reset isn't about sleeping more. It's about restoring the signal.'\n[Scene 3: 8-15s] Explain cortisol-melatonin rhythm. Visual: sunrise/sunset cycle.\n[Scene 4: 15-20s] Eastaura approach: herbal support + circadian environment + acupuncture for nervous system regulation.\n[Scene 5: 20-25s] '5 days to reset the pattern. The rest is maintenance.'\n[CTA] Download free Sleep Reset Guide.",topics:["Sleep Reset","Circadian Rhythm","Education"],platforms:["YouTube Shorts","TikTok"]},{id:"content_006",title:"5-Day 4-Night Experience Overview",type:"short_video_script",channel:"TikTok",campaign:"Experience Overview",cta:"See Full Itinerary",complianceStatus:"approved",publishStatus:"scheduled",sourceCode:"tiktok_5d4n_overview_001",performanceNotes:"Itinerary format tested well in previous campaign. Reuse structure.",createdAt:"2026-04-18",updatedAt:"2026-04-24",thumbnail:"/workbench/thumbs/scene-pavilion.jpg",body:"[Scene 1: 0-3s] '5 days. Here is exactly what happens.'\n[Scene 2: 3-8s] Day 1: Arrival, consultation, first herbal tea blend.\n[Scene 3: 8-13s] Day 2-3: Acupuncture, bodywork, structured rest, nature walks.\n[Scene 4: 13-18s] Day 4: Integration session, self-care protocol design.\n[Scene 5: 18-23s] Day 5: Departure with 30-day follow-up plan.\n[Scene 6: 23-25s] 'No group activities. No forced socializing. Just you and your reset.'\n[CTA] Link to full itinerary PDF.",topics:["Itinerary","Experience Overview"],platforms:["TikTok","Instagram Reels","YouTube Shorts"]},{id:"content_007",title:"Weekly Brief — Sleep Edition: April 20",type:"newsletter",channel:"Newsletter",campaign:"Newsletter Sleep Series",cta:"Read Full Issue",complianceStatus:"approved",publishStatus:"published",sourceCode:"newsletter_sleep_apr20",performanceNotes:"Open rate 42%, click rate 8.3%. Above benchmark.",createdAt:"2026-04-19",updatedAt:"2026-04-20",thumbnail:"/workbench/thumbs/newsletter.jpg",body:"This week's focus: the difference between sleep deprivation and circadian disruption.\n\n- Case snapshot: executive who 'slept 8 hours' but woke exhausted\n- TCM lens: why time of day matters more than duration\n- Practical tip: 48-hour screen curfew before arrival\n- Next week: herbal support vs. supplement stacking\n\n[CTA] Reply with your sleep question for next edition.",topics:["Newsletter","Sleep","Circadian"],platforms:["Newsletter"]},{id:"content_008",title:"No Chinese Required — Full English Support",type:"short_video_script",channel:"Instagram Reels",campaign:"Barrier Breaker Series",cta:"Check Language Options",complianceStatus:"approved",publishStatus:"published",sourceCode:"reels_no_chinese_001",performanceNotes:"Strong engagement from Japan, Korea, and Southeast Asia.",createdAt:"2026-04-12",updatedAt:"2026-04-16",thumbnail:"/workbench/thumbs/scene-consult.jpg",body:"[Scene 1: 0-3s] Text: 'I want to try TCM but I don't speak Chinese.'\n[Scene 2: 3-8s] Show bilingual team. English intake, English consultation, English protocol.\n[Scene 3: 8-15s] Testimonials in English. 'I was worried about language. It was never an issue.'\n[Scene 4: 15-20s] Translation support for herbal prescriptions to take home.\n[Scene 5: 20-23s] 'Your only job is to show up. We'll handle the rest.'\n[CTA] Link to language support page.",topics:["Language Barrier","English Support"],platforms:["Instagram Reels","YouTube Shorts"]}],"effectiveContent",0,[{rank:1,title:"POV: You arrive in China for 5-day TCM reset",channel:"Instagram Reels",leads:4,quality:"High",thumbnail:"/workbench/thumbs/scene-arrival.jpg"},{rank:2,title:"Why Eastaura Doesn't Promise Cures",channel:"LinkedIn",leads:3,quality:"High",thumbnail:"/workbench/thumbs/linkedin.jpg"},{rank:3,title:"Sleep Reset Explained",channel:"YouTube Shorts",leads:2,quality:"Medium",thumbnail:"/workbench/thumbs/scene-tea.jpg"},{rank:4,title:"No Chinese Required",channel:"Instagram Reels",leads:2,quality:"Medium",thumbnail:"/workbench/thumbs/scene-consult.jpg"},{rank:5,title:"5-Day 4-Night Experience",channel:"TikTok",leads:1,quality:"Low",thumbnail:"/workbench/thumbs/scene-pavilion.jpg"}],"leads",0,[{id:"lead_001",name:"Sarah Mitchell",email:"sarah.mitchell@email.com",country:"United States",age:42,avatar:"/workbench/avatars/sarah.jpg",primaryGoals:["Sleep Reset","Stress Recovery"],source:"Instagram Reels",campaign:"POV: Arrive in China",status:"qualified",riskLevel:"low",intentScore:92,lastActivity:"2 hours ago",nextAction:"Send video consultation link",budget:"$3,000 - $5,000",aiSummary:"High-intent lead from US corporate sector. Primary goals: sleep reset and stress recovery. Concerned about language barrier and acupuncture safety. No major medical red flags. Planning September visit. Previously tried sleep supplements with limited results.",riskNotes:["Taking sleep supplements — follow up on dosage","Do not promise cure outcomes"],intakeDetails:{goals:"Sleep reset, stress recovery, whole-person balance",concerns:"Language barrier, safety of acupuncture, not wanting tourist-group experience",timeline:"Planning visit in September 2026",previousExperience:"Tried sleep supplements, meditation apps, corporate wellness programs",medicalConditions:["Chronic insomnia (self-reported)","High stress levels"],medications:["Melatonin 3mg nightly","Magnesium supplement"],preferredContact:"Email"},timeline:[{date:"Apr 26, 2026",action:"Submitted intake form via Reels CTA",by:"Lead"},{date:"Apr 26, 2026",action:"AI risk assessment completed — LOW risk",by:"AI Agent"},{date:"Apr 27, 2026",action:"Flagged for human review — sleep supplement interaction",by:"AI Agent"},{date:"Apr 27, 2026",action:"Reviewed and approved by founder",by:"You"}],sourceAttribution:{campaign:"POV Experience Series Q2",contentItem:"POV: You arrive in China for 5-day TCM reset",channel:"Instagram Reels",utmSource:"instagram",utmMedium:"reels",utmCampaign:"pov_arrive_china_0426"}},{id:"lead_002",name:"James Chen",email:"j.chen@techflow.io",country:"Singapore",age:35,avatar:"/workbench/avatars/james.jpg",primaryGoals:["Stress Recovery"],source:"LinkedIn",campaign:"Why Eastaura Doesn't Promise Cures",status:"contacted",riskLevel:"medium",intentScore:74,lastActivity:"5 hours ago",nextAction:"Follow up on medical history form",budget:"$2,000 - $4,000",aiSummary:"Tech executive from Singapore. Interested in stress recovery but hesitant about TCM credibility. Strong analytical profile. Asked about clinical evidence. Medium risk due to skepticism that may lead to early churn if expectations are not carefully managed.",riskNotes:["Skeptical about TCM — needs evidence-based framing","High expectation for measurable outcomes"],intakeDetails:{goals:"Burnout recovery, regain focus and energy",concerns:"Scientific validity of TCM, ROI on wellness retreat",timeline:"Flexible, Q3 2026",previousExperience:"Executive coaching, biomarker testing",medicalConditions:["Work-related burnout"],medications:["None reported"],preferredContact:"LinkedIn DM + Email"},timeline:[{date:"Apr 25, 2026",action:"Submitted intake form",by:"Lead"},{date:"Apr 25, 2026",action:"AI summary generated",by:"AI Agent"},{date:"Apr 26, 2026",action:"Initial follow-up email drafted",by:"AI Agent"}],sourceAttribution:{campaign:"Trust & Transparency Series",contentItem:"Why Eastaura Doesn't Promise Cures",channel:"LinkedIn",utmSource:"linkedin",utmMedium:"post",utmCampaign:"trust_no_cure_0420"}},{id:"lead_003",name:"Elena Rossi",email:"elena.rossi@designstudio.it",country:"Italy",age:51,avatar:"/workbench/avatars/elena.jpg",primaryGoals:["Whole-Person Balance","Sleep Reset"],source:"YouTube Shorts",campaign:"Sleep Reset Explained",status:"new",riskLevel:"high",intentScore:68,lastActivity:"1 hour ago",nextAction:"Risk review required before contact",budget:"$4,000 - $6,000",aiSummary:"Designer from Italy. Interested in holistic balance and sleep. High risk flagged due to reported heart condition and blood pressure medication. Requires medical boundary review before any consultation can be offered.",riskNotes:["Heart condition reported — requires medical boundary check","On blood pressure medication — TCM interaction assessment needed","Do NOT provide medical advice"],intakeDetails:{goals:"Holistic wellness, sleep improvement, life balance",concerns:"Safety due to heart condition, travel to China",timeline:"October 2026",previousExperience:"Ayurveda retreat in India, yoga teacher training",medicalConditions:["Hypertension","Mild heart arrhythmia (self-reported)"],medications:["Lisinopril","Metoprolol"],preferredContact:"Email"},timeline:[{date:"Apr 27, 2026",action:"Submitted intake form via YouTube Shorts",by:"Lead"},{date:"Apr 27, 2026",action:"AI flagged HIGH RISK — medical conditions detected",by:"AI Agent"}],sourceAttribution:{campaign:"Sleep Education Series",contentItem:"Sleep Reset Explained",channel:"YouTube Shorts",utmSource:"youtube",utmMedium:"shorts",utmCampaign:"sleep_reset_0415"}},{id:"lead_004",name:"David Park",email:"david.park@outlook.kr",country:"South Korea",age:29,avatar:"/workbench/avatars/david.jpg",primaryGoals:["Stress Recovery"],source:"TikTok",campaign:"5-Day 4-Night Experience",status:"nurture",riskLevel:"low",intentScore:45,lastActivity:"3 days ago",nextAction:"Add to nurture sequence — budget not ready",budget:"$1,000 - $2,000",aiSummary:"Young professional from Seoul. Interested in stress recovery but budget constraint noted. Currently saving for experience. Low immediate conversion probability but good long-term nurture candidate. No medical risks.",riskNotes:[],intakeDetails:{goals:"Stress recovery, mental clarity",concerns:"Budget, travel logistics",timeline:"2027 or later",previousExperience:"Local spa treatments, gym membership",medicalConditions:[],medications:[],preferredContact:"Email"},timeline:[{date:"Apr 20, 2026",action:"Submitted intake form",by:"Lead"},{date:"Apr 21, 2026",action:"AI scored intent at 45 — nurture recommended",by:"AI Agent"}],sourceAttribution:{campaign:"Experience Overview",contentItem:"5-Day 4-Night Experience",channel:"TikTok",utmSource:"tiktok",utmMedium:"video",utmCampaign:"experience_5d4n_0410"}},{id:"lead_005",name:"Anna Kowalski",email:"anna.k@wellness.pl",country:"Poland",age:38,avatar:"/workbench/avatars/anna.jpg",primaryGoals:["Sleep Reset","Whole-Person Balance"],source:"Newsletter",campaign:"Weekly Brief — Sleep Edition",status:"consultation_booked",riskLevel:"low",intentScore:88,lastActivity:"12 hours ago",nextAction:"Prepare for video call on Apr 29",budget:"$3,500 - $5,500",aiSummary:"Wellness practitioner from Poland. High intent, clear goals, comfortable with holistic approaches. Already booked consultation. Low risk profile. Good fit for premium 5-day program.",riskNotes:[],intakeDetails:{goals:"Sleep reset, energy restoration, learn TCM self-care",concerns:"None significant",timeline:"May 2026",previousExperience:"Naturopathy training, yoga instruction",medicalConditions:[],medications:[],preferredContact:"Email + Zoom"},timeline:[{date:"Apr 15, 2026",action:"Submitted intake form",by:"Lead"},{date:"Apr 15, 2026",action:"AI summary — HIGH INTENT, LOW RISK",by:"AI Agent"},{date:"Apr 16, 2026",action:"Follow-up email sent",by:"AI Agent"},{date:"Apr 18, 2026",action:"Video consultation booked for Apr 29",by:"Lead"}],sourceAttribution:{campaign:"Newsletter Sleep Series",contentItem:"Weekly Brief — Sleep Edition",channel:"Newsletter",utmSource:"newsletter",utmMedium:"email",utmCampaign:"newsletter_sleep_apr3"}},{id:"lead_006",name:"Marcus Weber",email:"m.weber@consulting.de",country:"Germany",age:47,avatar:"/workbench/avatars/marcus.jpg",primaryGoals:["Stress Recovery","Sleep Reset"],source:"LinkedIn",campaign:"Founder's Story",status:"proposal_sent",riskLevel:"low",intentScore:85,lastActivity:"1 day ago",nextAction:"Follow up on proposal response",budget:"$5,000 - $8,000",aiSummary:"Senior consultant from Germany. High budget, clear timeline (June 2026). Already received personalized proposal. Interested in executive-focused program with privacy and discretion.",riskNotes:[],intakeDetails:{goals:"Executive burnout recovery, sleep restoration",concerns:"Privacy, efficiency of program, dietary requirements",timeline:"June 2026",previousExperience:"Luxury spa retreats, executive wellness programs",medicalConditions:["Mild sleep apnea (using CPAP)"],medications:[],preferredContact:"Email"},timeline:[{date:"Apr 10, 2026",action:"Submitted intake form",by:"Lead"},{date:"Apr 11, 2026",action:"Video consultation completed",by:"You"},{date:"Apr 14, 2026",action:"Personalized proposal sent",by:"AI Agent"}],sourceAttribution:{campaign:"Founder Series",contentItem:"Founder's Story — Why I Built Eastaura",channel:"LinkedIn",utmSource:"linkedin",utmMedium:"post",utmCampaign:"founder_story_0405"}},{id:"lead_007",name:"Yuki Tanaka",email:"yuki.t@creative.jp",country:"Japan",age:33,avatar:"/workbench/avatars/yuki.jpg",primaryGoals:["Whole-Person Balance"],source:"Instagram Reels",campaign:"No Chinese Required",status:"contacted",riskLevel:"low",intentScore:70,lastActivity:"8 hours ago",nextAction:"Answer questions about dietary accommodations",budget:"$2,500 - $4,000",aiSummary:"Creative director from Tokyo. Interested in whole-person balance. Asked about Japanese/English bilingual support and pescatarian meal options. Good intent, no medical risks.",riskNotes:[],intakeDetails:{goals:"Creative renewal, work-life balance, cultural immersion",concerns:"Language support, dietary needs (pescatarian)",timeline:"August 2026",previousExperience:"Onsen retreats, meditation practice",medicalConditions:[],medications:[],preferredContact:"Email"},timeline:[{date:"Apr 24, 2026",action:"Submitted intake form",by:"Lead"},{date:"Apr 24, 2026",action:"AI drafted personalized email",by:"AI Agent"},{date:"Apr 25, 2026",action:"Email approved and sent",by:"You"}],sourceAttribution:{campaign:"Barrier Breaker Series",contentItem:"No Chinese Required — Full English Support",channel:"Instagram Reels",utmSource:"instagram",utmMedium:"reels",utmCampaign:"no_chinese_required_0420"}},{id:"lead_008",name:"Olivia Brown",email:"olivia.brown@health.au",country:"Australia",age:55,avatar:"/workbench/avatars/olivia.jpg",primaryGoals:["Sleep Reset"],source:"Blog",campaign:"What Happens in Your First TCM Consultation",status:"new",riskLevel:"medium",intentScore:60,lastActivity:"6 hours ago",nextAction:"Review medical history — menopause-related sleep issues",budget:"$3,000 - $4,500",aiSummary:"Health professional from Australia. Investigating TCM for menopause-related sleep disruption. Medium risk due to hormone therapy. Needs careful medical boundary framing.",riskNotes:["On HRT — clarify that Eastaura does not replace medical treatment","Menopause-related symptoms require sensitive language"],intakeDetails:{goals:"Natural sleep support during menopause transition",concerns:"Safety with HRT, evidence for TCM in menopause",timeline:"September 2026",previousExperience:"Integrative medicine practice, acupuncture referral",medicalConditions:["Menopause transition","Occasional hot flashes"],medications:["HRT (estradiol/progesterone)"],preferredContact:"Email"},timeline:[{date:"Apr 27, 2026",action:"Submitted intake form",by:"Lead"},{date:"Apr 27, 2026",action:"AI summary generated",by:"AI Agent"}],sourceAttribution:{campaign:"Education Series",contentItem:"What Happens in Your First TCM Consultation",channel:"Blog",utmSource:"blog",utmMedium:"article",utmCampaign:"first_consultation_0325"}}],"notifications",0,[{id:"notif_001",type:"new_lead",title:"New lead: Elena Rossi from Italy",message:"Submitted intake form via YouTube Shorts. Goals: Whole-Person Balance, Sleep Reset. AI flagged HIGH RISK — heart condition and BP medication detected.",status:"pending",createdAt:"2026-04-27T09:30:00",read:!1,relatedId:"lead_003"},{id:"notif_002",type:"high_risk_alert",title:"High-risk lead requires review",message:"Elena Rossi (lead_003) has been flagged for medical boundary review. Heart arrhythmia and blood pressure medication reported.",status:"sent",createdAt:"2026-04-27T09:35:00",read:!1,relatedId:"lead_003"},{id:"notif_003",type:"followup_reminder",title:"Follow-up due: Marcus Weber",message:"Proposal sent 3 days ago. No response yet. Suggested action: gentle follow-up email or LinkedIn message.",status:"pending",createdAt:"2026-04-27T08:00:00",read:!1,relatedId:"lead_006"},{id:"notif_004",type:"daily_brief",title:"Daily Brief — April 27, 2026",message:"3 new leads, 2 high-intent, 1 high-risk. 5 pending review tasks. 4 content drafts awaiting approval. 2 follow-ups due today.",status:"sent",createdAt:"2026-04-27T07:00:00",read:!0,relatedId:"dashboard"},{id:"notif_005",type:"failed_email",title:"Failed email: Anna Kowalski consultation reminder",message:"Email bounced for anna.k@wellness.pl. Consultation scheduled for Apr 29. Immediate manual outreach recommended.",status:"failed",createdAt:"2026-04-27T08:00:00",read:!1,relatedId:"lead_005"},{id:"notif_006",type:"failed_ai_task",title:"AI task failed: Content compliance check",message:"Compliance check for 'Stress Recovery Is Not a Vacation' failed due to API timeout. Manual review required before publish.",status:"failed",createdAt:"2026-04-26T11:05:00",read:!0,relatedId:"content_003"},{id:"notif_007",type:"new_lead",title:"New lead: Sarah Mitchell from United States",message:"Submitted intake form via Instagram Reels. Goals: Sleep Reset, Stress Recovery. AI scored intent 92/100. LOW risk.",status:"sent",createdAt:"2026-04-26T14:00:00",read:!0,relatedId:"lead_001"},{id:"notif_008",type:"followup_reminder",title:"Follow-up due: Yuki Tanaka dietary question",message:"Yuki asked about pescatarian meal options 8 hours ago. Response not yet sent.",status:"pending",createdAt:"2026-04-27T10:00:00",read:!1,relatedId:"lead_007"}],"reviewTasks",0,[{id:"task_001",type:"lead_risk_review",priority:"high",relatedObject:"Elena Rossi — Lead",relatedObjectId:"lead_003",aiRecommendation:"Flag for medical boundary review. Lead reported heart arrhythmia and blood pressure medication. Recommend consulting with medical advisor before offering any TCM services. Suggested response: empathetic acknowledgment + request for physician clearance + offer of non-medical wellness components only.",status:"pending",createdAt:"2026-04-27T09:30:00",details:"Hypertension + arrhythmia + Lisinopril + Metoprolol"},{id:"task_002",type:"followup_email_approval",priority:"medium",relatedObject:"James Chen — Lead",relatedObjectId:"lead_002",aiRecommendation:"Draft emphasizes evidence-based TCM research and includes links to peer-reviewed studies. Tone is consultative, not promotional. Includes clear next step: schedule 15-minute discovery call.",status:"pending",createdAt:"2026-04-26T14:20:00",details:"Follow-up email for skeptical tech executive"},{id:"task_003",type:"content_compliance",priority:"high",relatedObject:"Stress Recovery Is Not a Vacation",relatedObjectId:"content_003",aiRecommendation:"Flagged phrase: 'addresses stress at the nervous system level' could be interpreted as medical claim. Suggested revision: 'creates conditions for your nervous system to downregulate.' Also flagged: 'herbal support' — add disclaimer that herbs are not a substitute for medical treatment.",status:"pending",createdAt:"2026-04-26T11:00:00",details:"Medical-adjacent language in TikTok script"},{id:"task_004",type:"script_approval",priority:"medium",relatedObject:"POV: You come to China for a quiet wellness reset",relatedObjectId:"content_001",aiRecommendation:"Script is clean from compliance perspective. All medical claims avoided. Visual storytelling approach is strong. One suggestion: add subtitle for accessibility. CTA is clear and tracks to correct intake form.",status:"approved",createdAt:"2026-04-24T10:15:00",details:"Instagram Reels script for POV series"},{id:"task_005",type:"notification_priority",priority:"urgent",relatedObject:"Failed Email — Anna Kowalski",relatedObjectId:"notif_005",aiRecommendation:"Email bounce detected for high-value lead. Suggested action: verify email address from intake form, attempt alternative contact method, or flag for manual outreach within 2 hours to prevent consultation no-show.",status:"pending",createdAt:"2026-04-27T08:00:00",details:"Consultation reminder email bounced"},{id:"task_006",type:"lead_risk_review",priority:"medium",relatedObject:"Olivia Brown — Lead",relatedObjectId:"lead_008",aiRecommendation:"Lead is on HRT for menopause. Medium risk due to potential herb-drug interactions. Suggested approach: acknowledge respectfully, clarify Eastaura does not replace medical treatment, offer to coordinate with her integrative medicine practitioner, focus retreat on lifestyle and stress reduction components only.",status:"pending",createdAt:"2026-04-27T12:00:00",details:"HRT + menopause-related sleep issues"},{id:"task_007",type:"followup_email_approval",priority:"low",relatedObject:"David Park — Lead",relatedObjectId:"lead_004",aiRecommendation:"Nurture sequence email #1: budget-friendly alternatives, payment plan information, and long-term value framing. Tone is supportive, not pushy. Includes social proof from similar budget-conscious guests.",status:"pending",createdAt:"2026-04-25T16:30:00",details:"Nurture email for budget-constrained lead"}],"skillFiles",0,t,"videoScenes",0,[{number:1,title:"Hook: Airplane window POV",thumbnail:"/workbench/thumbs/scene-arrival.jpg",caption:"You finally did it.",narration:"POV shot: airplane window, clouds over misty Chinese mountains. No music. Text overlay appears slowly.",duration:"0-3s"},{number:2,title:"Quiet arrival",thumbnail:"/workbench/thumbs/scene-walk.jpg",caption:"No one rushing you.",narration:"Corridor walk at Eastaura. Bamboo light filtering through rice paper. Bare feet on warm wood. Ambient sound only.",duration:"3-8s"},{number:3,title:"Tea ceremony",thumbnail:"/workbench/thumbs/scene-tea.jpg",caption:"Your first tea is your first treatment.",narration:"Close-up: steam rising from ceramic teapot. Hands wrapping around warm cup. Practitioner explains today's blend.",duration:"8-15s"},{number:4,title:"Consultation with translator",thumbnail:"/workbench/thumbs/scene-consult.jpg",caption:"Every word understood.",narration:"Bilingual practitioner consultation. Pulse diagnosis. Soft spoken. English translation. Comfort and clarity.",duration:"15-20s"},{number:5,title:"Sunset pavilion",thumbnail:"/workbench/thumbs/scene-pavilion.jpg",caption:"5 days. No schedule. Just reset.",narration:"Wide shot: meditation pavilion at golden hour. Person sitting quietly. Mountains in background. Text overlay. CTA: link in bio.",duration:"20-25s"}]])},19832,e=>{"use strict";var t=e.i(43476),a=e.i(75157);let r={status:{new:{bg:"bg-eastaura-sage-muted",text:"text-eastaura-success",border:"border-eastaura-sage-light/30",label:"New"},contacted:{bg:"bg-blue-50",text:"text-blue-700",border:"border-blue-200",label:"Contacted"},qualified:{bg:"bg-eastaura-gold-muted",text:"text-eastaura-gold",border:"border-eastaura-gold-light/30",label:"Qualified"},consultation_booked:{bg:"bg-purple-50",text:"text-purple-700",border:"border-purple-200",label:"Consultation Booked"},proposal_sent:{bg:"bg-eastaura-sage-muted",text:"text-eastaura-forest",border:"border-eastaura-sage/30",label:"Proposal Sent"},won:{bg:"bg-eastaura-sage-muted",text:"text-eastaura-success",border:"border-eastaura-success/30",label:"Won"},not_fit:{bg:"bg-gray-100",text:"text-gray-600",border:"border-gray-200",label:"Not Fit"},nurture:{bg:"bg-eastaura-warmgray-light",text:"text-eastaura-ink-muted",border:"border-eastaura-warmgray",label:"Nurture"}},risk:{low:{bg:"bg-eastaura-sage-muted",text:"text-eastaura-success",border:"border-eastaura-sage-light/30",label:"Low"},medium:{bg:"bg-amber-50",text:"text-amber-700",border:"border-amber-200",label:"Medium"},high:{bg:"bg-red-50",text:"text-red-700",border:"border-red-200",label:"High"}},priority:{low:{bg:"bg-gray-100",text:"text-gray-600",border:"border-gray-200",label:"Low"},medium:{bg:"bg-eastaura-gold-muted",text:"text-eastaura-warning",border:"border-eastaura-gold-light/30",label:"Medium"},high:{bg:"bg-amber-50",text:"text-amber-700",border:"border-amber-200",label:"High"},urgent:{bg:"bg-red-50",text:"text-red-700",border:"border-red-200",label:"Urgent"}},compliance:{pending:{bg:"bg-eastaura-gold-muted",text:"text-eastaura-warning",border:"border-eastaura-gold-light/30",label:"Pending"},approved:{bg:"bg-eastaura-sage-muted",text:"text-eastaura-success",border:"border-eastaura-sage-light/30",label:"Approved"},flagged:{bg:"bg-red-50",text:"text-red-700",border:"border-red-200",label:"Flagged"},rejected:{bg:"bg-gray-100",text:"text-gray-600",border:"border-gray-200",label:"Rejected"}},publish:{draft:{bg:"bg-gray-100",text:"text-gray-600",border:"border-gray-200",label:"Draft"},review:{bg:"bg-eastaura-gold-muted",text:"text-eastaura-warning",border:"border-eastaura-gold-light/30",label:"Review"},scheduled:{bg:"bg-blue-50",text:"text-blue-700",border:"border-blue-200",label:"Scheduled"},published:{bg:"bg-eastaura-sage-muted",text:"text-eastaura-success",border:"border-eastaura-sage-light/30",label:"Published"},idea:{bg:"bg-eastaura-warmgray-light",text:"text-eastaura-ink-muted",border:"border-eastaura-warmgray",label:"Idea"}},notification:{pending:{bg:"bg-eastaura-gold-muted",text:"text-eastaura-warning",border:"border-eastaura-gold-light/30",label:"Pending"},sent:{bg:"bg-eastaura-sage-muted",text:"text-eastaura-success",border:"border-eastaura-sage-light/30",label:"Sent"},failed:{bg:"bg-red-50",text:"text-red-700",border:"border-red-200",label:"Failed"},skipped:{bg:"bg-gray-100",text:"text-gray-600",border:"border-gray-200",label:"Skipped"}}};e.s(["StatusBadge",0,function({status:e,variant:i="status",className:n}){let s=r[i]?.[e]||{bg:"bg-gray-100",text:"text-gray-600",border:"border-gray-200",label:e};return(0,t.jsx)("span",{className:(0,a.cn)("inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border",s.bg,s.text,s.border,n),children:s.label})}])},2773,e=>{"use strict";let t=(0,e.i(56420).default)("funnel",[["path",{d:"M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z",key:"sc7q7i"}]]);e.s(["Filter",0,t],2773)},48161,e=>{"use strict";let t=(0,e.i(56420).default)("circle-check-big",[["path",{d:"M21.801 10A10 10 0 1 1 17 3.335",key:"yps3ct"}],["path",{d:"m9 11 3 3L22 4",key:"1pflzl"}]]);e.s(["CheckCircle",0,t],48161)},16306,e=>{"use strict";let t=(0,e.i(56420).default)("shield-alert",[["path",{d:"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",key:"oel41y"}],["path",{d:"M12 8v4",key:"1got3b"}],["path",{d:"M12 16h.01",key:"1drbdi"}]]);e.s(["ShieldAlert",0,t],16306)},92574,e=>{"use strict";var t=e.i(43476),a=e.i(71645),r=e.i(15288),i=e.i(19455),n=e.i(35381),s=e.i(16306),o=e.i(96315),l=e.i(56420);let d=(0,l.default)("file-check",[["path",{d:"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",key:"1oefj6"}],["path",{d:"M14 2v5a1 1 0 0 0 1 1h5",key:"wfsgrz"}],["path",{d:"m9 15 2 2 4-4",key:"1grp1n"}]]);var c=e.i(53138),u=e.i(70812),p=e.i(48161);let m=(0,l.default)("circle-x",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"m15 9-6 6",key:"1uzhvr"}],["path",{d:"m9 9 6 6",key:"z0biqf"}]]),g=(0,l.default)("pen-line",[["path",{d:"M13 21h8",key:"1jsn5i"}],["path",{d:"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z",key:"1a8usu"}]]);var h=e.i(74544),b=e.i(2773),y=e.i(13537),f=e.i(19832),v=e.i(75157);let k={lead_risk_review:{icon:s.ShieldAlert,label:"Lead Risk Review",color:"text-red-500"},followup_email_approval:{icon:o.Mail,label:"Follow-up Email",color:"text-blue-500"},content_compliance:{icon:d,label:"Content Compliance",color:"text-amber-500"},script_approval:{icon:n.ClipboardCheck,label:"Script Approval",color:"text-purple-500"},notification_priority:{icon:u.Bell,label:"Notification Priority",color:"text-eastaura-forest"}},w=["All","Pending","Approved","Rejected"];function x({label:e,value:a,color:i}){return(0,t.jsx)(r.Card,{className:"border-eastaura-warmgray shadow-card rounded-lg",children:(0,t.jsxs)(r.CardContent,{className:"p-3",children:[(0,t.jsx)("div",{className:(0,v.cn)("text-lg font-semibold",i.split(" ")[1]),children:a}),(0,t.jsx)("div",{className:"text-xs text-eastaura-ink-muted",children:e})]})})}e.s(["default",0,function(){let[e,s]=(0,a.useState)("All"),[o,l]=(0,a.useState)(y.reviewTasks),d=o.filter(t=>"All"===e||t.status===e.toLowerCase()),u=(e,t)=>{l(a=>a.map(a=>a.id===e?{...a,status:t}:a))};return(0,t.jsxs)("div",{className:"space-y-5 max-w-5xl mx-auto",children:[(0,t.jsx)("div",{className:"flex items-start justify-between",children:(0,t.jsxs)("div",{children:[(0,t.jsx)("h1",{className:"text-xl font-semibold text-eastaura-ink",children:"Review Tasks"}),(0,t.jsx)("p",{className:"text-sm text-eastaura-ink-muted mt-0.5",children:"AI-generated items requiring human approval before execution"})]})}),(0,t.jsxs)("div",{className:"grid grid-cols-2 md:grid-cols-4 gap-3",children:[(0,t.jsx)(x,{label:"Pending",value:o.filter(e=>"pending"===e.status).length,color:"bg-eastaura-gold-muted text-eastaura-warning"}),(0,t.jsx)(x,{label:"Approved",value:o.filter(e=>"approved"===e.status).length,color:"bg-eastaura-sage-muted text-eastaura-success"}),(0,t.jsx)(x,{label:"Rejected",value:o.filter(e=>"rejected"===e.status).length,color:"bg-red-50 text-red-600"}),(0,t.jsx)(x,{label:"Edited",value:o.filter(e=>"edited"===e.status).length,color:"bg-blue-50 text-blue-600"})]}),(0,t.jsxs)("div",{className:"flex items-center gap-2",children:[(0,t.jsx)(b.Filter,{className:"w-4 h-4 text-eastaura-ink-muted"}),w.map(a=>(0,t.jsx)("button",{onClick:()=>s(a),className:(0,v.cn)("px-3 py-1.5 rounded-full text-xs font-medium border transition-colors",e===a?"bg-eastaura-forest text-eastaura-cream border-eastaura-forest":"bg-white text-eastaura-ink-muted border-eastaura-warmgray hover:border-eastaura-sage/50"),children:a},a))]}),(0,t.jsx)("div",{className:"space-y-3",children:d.map(e=>{let a=k[e.type],s=a?.icon||n.ClipboardCheck;return(0,t.jsx)(r.Card,{className:(0,v.cn)("border shadow-card rounded-lg","pending"===e.status?"border-eastaura-warmgray":"border-eastaura-warmgray/50 bg-eastaura-cream-dark/30"),children:(0,t.jsx)(r.CardContent,{className:"p-4",children:(0,t.jsxs)("div",{className:"flex flex-col md:flex-row gap-4",children:[(0,t.jsxs)("div",{className:"flex items-start gap-3 md:w-48 shrink-0",children:[(0,t.jsx)("div",{className:(0,v.cn)("w-9 h-9 rounded-lg flex items-center justify-center shrink-0","pending"===e.status?"bg-eastaura-sage-muted":"bg-eastaura-warmgray-light"),children:(0,t.jsx)(s,{className:(0,v.cn)("w-4 h-4",a?.color||"text-eastaura-forest")})}),(0,t.jsxs)("div",{children:[(0,t.jsx)("div",{className:"text-xs font-medium text-eastaura-ink",children:a?.label||e.type}),(0,t.jsx)(f.StatusBadge,{status:e.priority,variant:"priority",className:"mt-1"})]})]}),(0,t.jsxs)("div",{className:"flex-1 min-w-0",children:[(0,t.jsx)("div",{className:"text-sm font-medium text-eastaura-ink",children:e.relatedObject}),(0,t.jsxs)("div",{className:"text-xs text-eastaura-ink-muted mt-1",children:[(0,t.jsx)("span",{className:"font-medium",children:"AI Recommendation:"})," ",e.aiRecommendation]}),e.details&&(0,t.jsxs)("div",{className:"flex items-center gap-1 mt-1.5 text-[11px] text-eastaura-ink-muted",children:[(0,t.jsx)(c.AlertTriangle,{className:"w-3 h-3 text-eastaura-warning"}),e.details]}),(0,t.jsxs)("div",{className:"flex items-center gap-1 mt-2 text-[10px] text-eastaura-ink-muted",children:[(0,t.jsx)(h.Clock,{className:"w-3 h-3"}),"Created ",new Date(e.createdAt).toLocaleString()]})]}),(0,t.jsxs)("div",{className:"flex md:flex-col items-center md:items-end gap-2 shrink-0",children:[(0,t.jsx)(f.StatusBadge,{status:e.status,variant:"status"}),"pending"===e.status&&(0,t.jsxs)("div",{className:"flex items-center gap-1.5",children:[(0,t.jsxs)(i.Button,{size:"sm",className:"h-7 text-[11px] bg-eastaura-forest hover:bg-eastaura-forest-light text-eastaura-cream gap-1 px-2.5",onClick:()=>u(e.id,"approved"),children:[(0,t.jsx)(p.CheckCircle,{className:"w-3 h-3"})," Approve"]}),(0,t.jsxs)(i.Button,{variant:"outline",size:"sm",className:"h-7 text-[11px] border-eastaura-warmgray gap-1 px-2.5",onClick:()=>u(e.id,"edited"),children:[(0,t.jsx)(g,{className:"w-3 h-3"})," Edit"]}),(0,t.jsxs)(i.Button,{variant:"outline",size:"sm",className:"h-7 text-[11px] border-red-200 text-red-600 hover:bg-red-50 gap-1 px-2.5",onClick:()=>u(e.id,"rejected"),children:[(0,t.jsx)(m,{className:"w-3 h-3"})," Reject"]})]})]})]})})},e.id)})}),0===d.length&&(0,t.jsxs)("div",{className:"py-12 text-center",children:[(0,t.jsx)(n.ClipboardCheck,{className:"w-8 h-8 text-eastaura-warmgray mx-auto mb-3"}),(0,t.jsx)("p",{className:"text-sm text-eastaura-ink-muted",children:"No review tasks match this filter."})]})]})}],92574)}]);

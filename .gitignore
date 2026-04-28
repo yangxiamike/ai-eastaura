@@ -1,6 +1,23 @@
 # Reference projects
 ai-marketing-system/
 
+# Dependencies and build output
+node_modules/
+.next/
+out/
+tsconfig.tsbuildinfo
+
+# Environment files
+.env
+.env*.local
+
 # Local/editor noise
 .DS_Store
 Thumbs.db
+.codex-*.log
+.codex-*.pid
+.chrome-profile-*/
+.edge-profile/
+_tmp_*/
+
+.vercel

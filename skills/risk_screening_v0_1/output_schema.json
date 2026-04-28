@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "risk_screening_output_v0_1",
+  "type": "object",
+  "required": ["riskLevel", "riskNotes", "humanReviewRequired"],
+  "properties": {
+    "riskLevel": { "type": "string", "enum": ["low", "medium", "high"] },
+    "riskNotes": { "type": "array", "items": { "type": "string" } },
+    "humanReviewRequired": { "type": "boolean" }
+  }
+}

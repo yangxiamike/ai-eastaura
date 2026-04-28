@@ -1,0 +1,23 @@
+﻿2026-04-27 14:06:06 Starting Codex local bin repair.
+2026-04-27 14:06:06 Source: C:\Users\hp\AppData\Roaming\npm\node_modules\@openai\codex\node_modules\@openai\codex-win32-x64\vendor\x86_64-pc-windows-msvc\codex
+2026-04-27 14:06:06 Target: C:\Users\hp\AppData\Local\OpenAI\Codex\bin
+2026-04-27 14:06:06 Waiting for Codex local bin processes to exit.
+2026-04-27 14:06:06 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:09 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:12 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:15 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:18 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:21 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:24 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:27 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:30 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:33 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:36 Still waiting on: codex:34972, node_repl:24280
+2026-04-27 14:06:40 Backed up C:\Users\hp\AppData\Local\OpenAI\Codex\bin\codex.exe to C:\Users\hp\AppData\Local\OpenAI\Codex\bin\codex.exe.bak-20260427-140606
+2026-04-27 14:06:40 Copied stable codex.exe
+2026-04-27 14:06:40 Backed up C:\Users\hp\AppData\Local\OpenAI\Codex\bin\codex-command-runner.exe to C:\Users\hp\AppData\Local\OpenAI\Codex\bin\codex-command-runner.exe.bak-20260427-140606
+2026-04-27 14:06:40 Copied stable codex-command-runner.exe
+2026-04-27 14:06:40 Backed up C:\Users\hp\AppData\Local\OpenAI\Codex\bin\codex-windows-sandbox-setup.exe to C:\Users\hp\AppData\Local\OpenAI\Codex\bin\codex-windows-sandbox-setup.exe.bak-20260427-140606
+2026-04-27 14:06:40 Copied stable codex-windows-sandbox-setup.exe
+2026-04-27 14:06:40 Installed version: codex-cli 0.125.0
+2026-04-27 14:06:40 Codex local bin repair completed.

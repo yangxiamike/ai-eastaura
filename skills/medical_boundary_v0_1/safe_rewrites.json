@@ -1,0 +1,13 @@
+{
+  "version": "v0_1",
+  "rewrites": [
+    {
+      "unsafe": "cures insomnia",
+      "safe": "supports a sleep reset through a structured wellness retreat"
+    },
+    {
+      "unsafe": "treats anxiety",
+      "safe": "creates space for stress recovery with clear clinical boundaries"
+    }
+  ]
+}

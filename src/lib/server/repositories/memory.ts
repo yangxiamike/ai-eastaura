@@ -1,0 +1,48 @@
+import * as store from "@/lib/server/store";
+import type { EastauraRepository } from "./types";
+
+export const memoryRepository: EastauraRepository = {
+  createLead: async (payload) => store.createLead(payload),
+  listLeads: async (query) => store.listLeads(query),
+  exportLeads: async (query) => store.exportLeads(query),
+  getLead: async (id) => store.getLead(id),
+  updateLeadStatus: async (id, status, reason) =>
+    store.updateLeadStatus(id, status, reason),
+  saveAiRun: async (aiRun) => store.saveAiRun(aiRun),
+  getAiRunsForLead: async (leadId) => store.getAiRunsForLead(leadId),
+  createLeadNote: async (leadId, body, author) =>
+    store.createLeadNote(leadId, body, author),
+  getLeadNotes: async (leadId) => store.getLeadNotes(leadId),
+  getLeadStatusEvents: async (leadId) => store.getLeadStatusEvents(leadId),
+  createNotification: async (notification) => store.createNotification(notification),
+  updateNotificationDelivery: async (id, delivery) =>
+    store.updateNotificationDelivery(id, delivery),
+  getNotification: async (id) => store.getNotification(id),
+  listNotifications: async () => store.listNotifications(),
+  createLeadEvent: async (event) => store.createLeadEvent(event),
+  getLeadEventsForLead: async (leadId) => store.getLeadEventsForLead(leadId),
+  getDashboardStats: async () => store.getDashboardStats(),
+  createCampaign: async (payload) => store.createCampaign(payload),
+  getCampaign: async (id) => store.getCampaign(id),
+  listCampaigns: async (query) => store.listCampaigns(query),
+  updateCampaign: async (id, payload) => store.updateCampaign(id, payload),
+  createContentAsset: async (payload) => store.createContentAsset(payload),
+  getContentAsset: async (id) => store.getContentAsset(id),
+  listContentAssets: async (query) => store.listContentAssets(query),
+  updateContentAsset: async (id, payload) => store.updateContentAsset(id, payload),
+  createStoryboard: async (payload) => store.createStoryboard(payload),
+  getStoryboard: async (id) => store.getStoryboard(id),
+  listStoryboards: async (query) => store.listStoryboards(query),
+  updateStoryboard: async (id, payload) => store.updateStoryboard(id, payload),
+  createReviewTask: async (payload) => store.createReviewTask(payload),
+  getReviewTask: async (id) => store.getReviewTask(id),
+  listReviewTasks: async (query) => store.listReviewTasks(query),
+  updateReviewTask: async (id, payload) => store.updateReviewTask(id, payload),
+  createPublishPost: async (payload) => store.createPublishPost(payload),
+  getPublishPost: async (id) => store.getPublishPost(id),
+  listPublishPosts: async (query) => store.listPublishPosts(query),
+  updatePublishPost: async (id, payload) => store.updatePublishPost(id, payload),
+  createContentMetric: async (payload) => store.createContentMetric(payload),
+  listContentMetrics: async (query) => store.listContentMetrics(query),
+  getContentAttribution: async (query) => store.getContentAttribution(query),
+};

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "lead_triage_output_v0_1",
+  "type": "object",
+  "required": [
+    "summary",
+    "primaryGoals",
+    "buyingSignals",
+    "riskLevel",
+    "riskNotes",
+    "fitScore",
+    "intentScore",
+    "riskScore",
+    "nextStep",
+    "followUpDraft",
+    "humanReviewRequired"
+  ],
+  "properties": {
+    "summary": { "type": "string" },
+    "primaryGoals": { "type": "array", "items": { "type": "string" } },
+    "buyingSignals": { "type": "array", "items": { "type": "string" } },
+    "riskLevel": { "type": "string", "enum": ["low", "medium", "high"] },
+    "riskNotes": { "type": "array", "items": { "type": "string" } },
+    "fitScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "intentScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "riskScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "nextStep": { "type": "string" },
+    "followUpDraft": { "type": "string" },
+    "humanReviewRequired": { "type": "boolean" }
+  }
+}

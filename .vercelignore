@@ -1,0 +1,23 @@
+# Local dependencies and build output
+node_modules/
+.next/
+out/
+tsconfig.tsbuildinfo
+
+# Reference/prototype workspaces not used by the deployable root Next app
+ai-marketing-system/
+workbench-ui/
+workbecnch-ui-2/
+_tmp_*/
+_tmp_edge_cdp/
+_tmp_kimi_static/
+
+# Local browser/test profiles and logs
+.chrome-profile-*/
+.edge-profile/
+.codex-*.log
+.codex-*.pid
+
+# Large source artifacts and local-only design captures
+Kimi_Agent_Eastaura Wellness Retreat Prototype.zip
+docs/assets/

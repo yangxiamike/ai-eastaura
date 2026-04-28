@@ -1,0 +1,13 @@
+{
+  "version": "v0_1",
+  "examples": [
+    {
+      "input": {
+        "goals": ["sleep reset", "stress recovery"],
+        "budgetUsd": 3000,
+        "preferredTiming": "June"
+      },
+      "output_notes": "Intent should be medium to high; avoid making health claims."
+    }
+  ]
+}
