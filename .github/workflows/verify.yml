@@ -2,7 +2,12 @@ name: verify
 
 on:
   push:
-    branches: [main, master, eng-wb-csv-001-base, codex/**, codex-*]
+    branches:
+      - main
+      - master
+      - eng-wb-csv-001-base
+      - "codex/**"
+      - "codex-*"
   pull_request:
 
 jobs:
