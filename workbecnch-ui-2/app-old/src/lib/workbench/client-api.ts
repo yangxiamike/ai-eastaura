@@ -82,6 +82,11 @@ type AttributionResponse = ApiMeta & {
   channels?: ChannelPerformance[];
 };
 
+type CsvExportResponse = {
+  blob: Blob;
+  filename: string;
+};
+
 function normalizeWorkbenchApiPath(path: string) {
   if (!path.startsWith("/api/workbench")) {
     return path;
@@ -109,6 +114,25 @@ async function requestJson<T>(path: string, init?: RequestInit): Promise<T> {
   }
 
   return payload;
+}
+
+async function requestBlob(path: string): Promise<CsvExportResponse> {
+  const response = await fetch(normalizeWorkbenchApiPath(path));
+
+  if (!response.ok) {
+    const payload = (await response.json().catch(() => ({}))) as { error?: string };
+    throw new Error(payload.error || `Request failed: ${response.status}`);
+  }
+
+  return {
+    blob: await response.blob(),
+    filename: filenameFromContentDisposition(response.headers.get("content-disposition")) ?? "eastaura-lead.csv",
+  };
+}
+
+function filenameFromContentDisposition(header: string | null) {
+  const match = header?.match(/filename="?([^";]+)"?/i);
+  return match?.[1];
 }
 
 export function getDashboard() {
@@ -144,6 +168,10 @@ export function rerunLeadTriage(id: string) {
   return requestJson<Partial<LeadDetailResponse>>(`/api/workbench/leads/${encodeURIComponent(id)}/triage`, {
     method: "POST",
   });
+}
+
+export function exportLeadCsv(id: string) {
+  return requestBlob(`/api/workbench/leads/${encodeURIComponent(id)}/export`);
 }
 
 export function getNotifications() {

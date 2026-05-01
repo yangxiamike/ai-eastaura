@@ -1,0 +1,2339 @@
+{
+  "task": "ENG-WB-CSV-001",
+  "role": "browser-flow-tester",
+  "startedAt": "2026-05-01T09:09:04.682Z",
+  "finishedAt": "2026-05-01T09:09:17.352Z",
+  "smoke": {
+    "rootHealth": {
+      "status": 200,
+      "ok": true,
+      "bodyPrefix": "{\"ok\":true,\"service\":\"eastaura-mvp-backend\",\"persistence\":\"supabase\",\"llm\":\"configured\",\"adminGuard\":\"configured\",\"notificationChannels\":[\"in_app\",\"email\",\"feishu\"],\"notificationCo"
+    },
+    "workbench": {
+      "status": 200,
+      "ok": true,
+      "bodyPrefix": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-s"
+    }
+  },
+  "browser": "chromium headless via Playwright package from root node_modules",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "routeDelayMs": 700,
+  "flows": [
+    {
+      "label": "fixed",
+      "leadId": "4960b5ca-dbef-4d75-b5cf-08e58adc01b1",
+      "url": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+      "startedAt": "2026-05-01T09:09:04.919Z",
+      "status": "PASS",
+      "steps": [
+        {
+          "at": "2026-05-01T09:09:05.147Z",
+          "action": "goto",
+          "actualUrl": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/"
+        },
+        {
+          "at": "2026-05-01T09:09:09.735Z",
+          "action": "click Export CSV"
+        },
+        {
+          "at": "2026-05-01T09:09:09.737Z",
+          "action": "observe Exporting CSV...",
+          "result": true
+        },
+        {
+          "at": "2026-05-01T09:09:11.405Z",
+          "action": "download event",
+          "suggestedFilename": "eastaura-lead-content-pipeline-qa-20260428161043875-4j1on7.csv",
+          "savedAs": "D:\\work\\ai-eastaura\\docs\\harness\\evidence\\ENG-WB-CSV-001-browser-flow-tester-5-probe.fixed.csv"
+        }
+      ],
+      "exports": [
+        {
+          "url": "http://127.0.0.1:5182/api/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/export/",
+          "status": 200,
+          "ok": true,
+          "contentType": "text/csv; charset=utf-8",
+          "contentDisposition": "attachment; filename=\"eastaura-lead-content-pipeline-qa-20260428161043875-4j1on7.csv\""
+        }
+      ],
+      "storageBeforeClick": {
+        "localStorageKeys": [],
+        "sessionStorageKeys": [],
+        "cookieNames": [],
+        "sensitiveInLocalStorage": false,
+        "sensitiveInSessionStorage": false,
+        "sensitiveInCookies": false,
+        "sensitiveInBodyText": false,
+        "sensitiveInDom": false,
+        "rootExportInBodyText": false,
+        "rootExportInDom": false,
+        "bodyTextPrefix": "Eastaura\n工作台\n总览\n内容工作台\n视频生成器\n日历\n归因\n线索\n审核任务\n5\n通知\n3\n合作方与资产\n技能与模板\n设置\n创始人运营\n试点模式\n2026年5月1日星期五\n筛查线索\n中文\nEnglish\nLeads\n/\nContent Pipeline QA 20260428161043875-4j1on7\nContent Pipeline QA 20260428161043875-4j1on7\nUnited States\n-\n35 years old\n-\nqa-content-20260428161043875-4j1on7@example.com\nStress recovery\nSleep reset\nIntent\n65/100\nFit\n59/100\nRisk\n1/5\nBudget\n$2,800\nAI Summary\n\n35-44岁美国用户，单人出行，预算$2800，计划2026年9月参与，主要目标为压力恢复和睡眠重置。freeText提及是自动化内容管道验证，无紧急医疗需求。\n\nIntake Details\nGoals\nStress recovery, Sleep rese"
+      },
+      "storageAfterClick": {
+        "localStorageKeys": [],
+        "sessionStorageKeys": [],
+        "cookieNames": [],
+        "sensitiveInLocalStorage": false,
+        "sensitiveInSessionStorage": false,
+        "sensitiveInCookies": false,
+        "sensitiveInBodyText": false,
+        "sensitiveInDom": false,
+        "rootExportInBodyText": false,
+        "rootExportInDom": false,
+        "bodyTextPrefix": "Eastaura\n工作台\n总览\n内容工作台\n视频生成器\n日历\n归因\n线索\n审核任务\n5\n通知\n3\n合作方与资产\n技能与模板\n设置\n创始人运营\n试点模式\n2026年5月1日星期五\n筛查线索\n中文\nEnglish\nLeads\n/\nContent Pipeline QA 20260428161043875-4j1on7\nContent Pipeline QA 20260428161043875-4j1on7\nUnited States\n-\n35 years old\n-\nqa-content-20260428161043875-4j1on7@example.com\nStress recovery\nSleep reset\nIntent\n65/100\nFit\n59/100\nRisk\n1/5\nBudget\n$2,800\nAI Summary\n\n35-44岁美国用户，单人出行，预算$2800，计划2026年9月参与，主要目标为压力恢复和睡眠重置。freeText提及是自动化内容管道验证，无紧急医疗需求。\n\nIntake Details\nGoals\nStress recovery, Sleep rese"
+      },
+      "screenshot": "D:\\work\\ai-eastaura\\docs\\harness\\evidence\\ENG-WB-CSV-001-browser-flow-tester-5-probe.fixed.png",
+      "downloadPath": "D:\\work\\ai-eastaura\\docs\\harness\\evidence\\ENG-WB-CSV-001-browser-flow-tester-5-probe.fixed.csv",
+      "finalUrl": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+      "finalButtonText": "Export CSV",
+      "buttonVisibleBeforeClick": true,
+      "buttonVisibleAfterClick": true,
+      "exportingObserved": true,
+      "exportCsvRestored": true
+    },
+    {
+      "label": "dynamic",
+      "leadId": "4edd10c5-c45e-486c-a5d2-36e997d3f555",
+      "url": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+      "startedAt": "2026-05-01T09:09:11.551Z",
+      "status": "PASS",
+      "steps": [
+        {
+          "at": "2026-05-01T09:09:11.626Z",
+          "action": "goto",
+          "actualUrl": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/"
+        },
+        {
+          "at": "2026-05-01T09:09:13.148Z",
+          "action": "click Export CSV"
+        },
+        {
+          "at": "2026-05-01T09:09:13.150Z",
+          "action": "observe Exporting CSV...",
+          "result": true
+        },
+        {
+          "at": "2026-05-01T09:09:14.736Z",
+          "action": "download event",
+          "suggestedFilename": "eastaura-lead-notification-qa-20260428094648567-987l44.csv",
+          "savedAs": "D:\\work\\ai-eastaura\\docs\\harness\\evidence\\ENG-WB-CSV-001-browser-flow-tester-5-probe.dynamic.csv"
+        }
+      ],
+      "exports": [
+        {
+          "url": "http://127.0.0.1:5182/api/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/export/",
+          "status": 200,
+          "ok": true,
+          "contentType": "text/csv; charset=utf-8",
+          "contentDisposition": "attachment; filename=\"eastaura-lead-notification-qa-20260428094648567-987l44.csv\""
+        }
+      ],
+      "storageBeforeClick": {
+        "localStorageKeys": [],
+        "sessionStorageKeys": [],
+        "cookieNames": [],
+        "sensitiveInLocalStorage": false,
+        "sensitiveInSessionStorage": false,
+        "sensitiveInCookies": false,
+        "sensitiveInBodyText": false,
+        "sensitiveInDom": false,
+        "rootExportInBodyText": false,
+        "rootExportInDom": false,
+        "bodyTextPrefix": "Eastaura\n工作台\n总览\n内容工作台\n视频生成器\n日历\n归因\n线索\n审核任务\n5\n通知\n3\n合作方与资产\n技能与模板\n设置\n创始人运营\n试点模式\n2026年5月1日星期五\n筛查线索\n中文\nEnglish\nLeads\n/\nNotification QA 20260428094648567-987l44\nNotification QA 20260428094648567-987l44\nUnited States\n-\n42 years old\n-\nqa-notify-20260428094648567-987l44@example.com\nStress recovery\nIntent\n20/100\nFit\n18/100\nRisk\n1/5\nBudget\nNot specified\nAI Summary\n\nLead from QA notification pipeline verification. Stated goal: stress recovery. No health risks or medical claims identified. Several key fields "
+      },
+      "storageAfterClick": {
+        "localStorageKeys": [],
+        "sessionStorageKeys": [],
+        "cookieNames": [],
+        "sensitiveInLocalStorage": false,
+        "sensitiveInSessionStorage": false,
+        "sensitiveInCookies": false,
+        "sensitiveInBodyText": false,
+        "sensitiveInDom": false,
+        "rootExportInBodyText": false,
+        "rootExportInDom": false,
+        "bodyTextPrefix": "Eastaura\n工作台\n总览\n内容工作台\n视频生成器\n日历\n归因\n线索\n审核任务\n5\n通知\n3\n合作方与资产\n技能与模板\n设置\n创始人运营\n试点模式\n2026年5月1日星期五\n筛查线索\n中文\nEnglish\nLeads\n/\nNotification QA 20260428094648567-987l44\nNotification QA 20260428094648567-987l44\nUnited States\n-\n42 years old\n-\nqa-notify-20260428094648567-987l44@example.com\nStress recovery\nIntent\n20/100\nFit\n18/100\nRisk\n1/5\nBudget\nNot specified\nAI Summary\n\nLead from QA notification pipeline verification. Stated goal: stress recovery. No health risks or medical claims identified. Several key fields "
+      },
+      "screenshot": "D:\\work\\ai-eastaura\\docs\\harness\\evidence\\ENG-WB-CSV-001-browser-flow-tester-5-probe.dynamic.png",
+      "downloadPath": "D:\\work\\ai-eastaura\\docs\\harness\\evidence\\ENG-WB-CSV-001-browser-flow-tester-5-probe.dynamic.csv",
+      "finalUrl": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+      "finalButtonText": "Export CSV",
+      "buttonVisibleBeforeClick": true,
+      "buttonVisibleAfterClick": true,
+      "exportingObserved": true,
+      "exportCsvRestored": true
+    },
+    {
+      "label": "missing",
+      "leadId": "00000000-0000-0000-0000-000000000000",
+      "url": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+      "status": "PASS",
+      "steps": [
+        {
+          "at": "2026-05-01T09:09:14.900Z",
+          "action": "goto",
+          "actualUrl": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/"
+        }
+      ],
+      "screenshot": "D:\\work\\ai-eastaura\\docs\\harness\\evidence\\ENG-WB-CSV-001-browser-flow-tester-5-probe.missing.png",
+      "finalUrl": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+      "exportButtonVisible": false,
+      "loadingVisibleAfterSettle": false,
+      "leadNotFoundVisible": true,
+      "sarahMitchellVisible": false,
+      "bodyTextPrefix": "Eastaura\n工作台\n总览\n内容工作台\n视频生成器\n日历\n归因\n线索\n审核任务\n5\n通知\n3\n合作方与资产\n技能与模板\n设置\n创始人运营\n试点模式\n2026年5月1日星期五\n筛查线索\n中文\nEnglish\nLead not found\n\nRoot API /api/leads/00000000-0000-0000-0000-000000000000 failed (404): Lead not found.\n\nBack to Leads",
+      "storage": {
+        "localStorageKeys": [],
+        "sessionStorageKeys": [],
+        "cookieNames": [],
+        "sensitiveInLocalStorage": false,
+        "sensitiveInSessionStorage": false,
+        "sensitiveInCookies": false,
+        "sensitiveInBodyText": false,
+        "sensitiveInDom": false,
+        "rootExportInBodyText": false,
+        "rootExportInDom": false,
+        "bodyTextPrefix": "Eastaura\n工作台\n总览\n内容工作台\n视频生成器\n日历\n归因\n线索\n审核任务\n5\n通知\n3\n合作方与资产\n技能与模板\n设置\n创始人运营\n试点模式\n2026年5月1日星期五\n筛查线索\n中文\nEnglish\nLead not found\n\nRoot API /api/leads/00000000-0000-0000-0000-000000000000 failed (404): Lead not found.\n\nBack to Leads"
+      }
+    }
+  ],
+  "network": {
+    "requests": [
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+        "resourceType": "document",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_globals_00bmr3v.css",
+        "resourceType": "stylesheet",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "text/css,*/*;q=0.1",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_07v4vui._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_next-devtools_index_0toj4cp.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-dom_0pqswcm._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-server-dom-turbopack_11vv2o-._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_02l5t8x._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_0z1npdl._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_%40swc_helpers_cjs_0zm1-0s._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_0rqeker._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/turbopack-workbecnch-ui-2_app-old_0zngsf-._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_03c-jc7._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_layout_tsx_05qv1_x._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_05478i.._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0ks7z5d._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_layout_tsx_0-1gd8z._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0u-w3n0._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_lucide-react_dist_esm_icons_0f_e6cn._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_leads_%5Bid%5D_page_tsx_0hc05zs._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_components_builtin_global-error_0-1gd8z.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/founder.jpg",
+        "resourceType": "image",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0yjw1oe._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0tojobd._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+        "resourceType": "fetch",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/sarah.jpg",
+        "resourceType": "image",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/export/",
+        "resourceType": "fetch",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+        "resourceType": "document",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_globals_00bmr3v.css",
+        "resourceType": "stylesheet",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "text/css,*/*;q=0.1",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_07v4vui._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_next-devtools_index_0toj4cp.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-dom_0pqswcm._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-server-dom-turbopack_11vv2o-._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_02l5t8x._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_0z1npdl._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_%40swc_helpers_cjs_0zm1-0s._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_0rqeker._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/turbopack-workbecnch-ui-2_app-old_0zngsf-._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_03c-jc7._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_layout_tsx_05qv1_x._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_05478i.._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0ks7z5d._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_layout_tsx_0-1gd8z._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0u-w3n0._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_lucide-react_dist_esm_icons_0f_e6cn._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_leads_%5Bid%5D_page_tsx_0hc05zs._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_components_builtin_global-error_0-1gd8z.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/founder.jpg",
+        "resourceType": "image",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0yjw1oe._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0tojobd._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+        "resourceType": "fetch",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/sarah.jpg",
+        "resourceType": "image",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/export/",
+        "resourceType": "fetch",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+        "resourceType": "document",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_globals_00bmr3v.css",
+        "resourceType": "stylesheet",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "text/css,*/*;q=0.1",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_07v4vui._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_next-devtools_index_0toj4cp.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-dom_0pqswcm._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-server-dom-turbopack_11vv2o-._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_02l5t8x._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_0z1npdl._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_%40swc_helpers_cjs_0zm1-0s._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_0rqeker._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/turbopack-workbecnch-ui-2_app-old_0zngsf-._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_03c-jc7._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_layout_tsx_05qv1_x._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_05478i.._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0ks7z5d._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_layout_tsx_0-1gd8z._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0u-w3n0._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_lucide-react_dist_esm_icons_0f_e6cn._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_leads_%5Bid%5D_page_tsx_0hc05zs._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_components_builtin_global-error_0-1gd8z.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/founder.jpg",
+        "resourceType": "image",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0yjw1oe._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0tojobd._.js",
+        "resourceType": "script",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/00000000-0000-0000-0000-000000000000/",
+        "resourceType": "fetch",
+        "sensitiveInUrl": false,
+        "sensitiveInHeaders": false,
+        "rootExportInUrl": false,
+        "rootExportInHeaders": false,
+        "headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "referer": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        }
+      }
+    ],
+    "responses": [
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+        "status": 200,
+        "ok": true,
+        "contentType": "text/html; charset=utf-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_globals_00bmr3v.css",
+        "status": 200,
+        "ok": true,
+        "contentType": "text/css; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_07v4vui._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_02l5t8x._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-server-dom-turbopack_11vv2o-._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_0rqeker._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_%40swc_helpers_cjs_0zm1-0s._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_layout_tsx_05qv1_x._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/turbopack-workbecnch-ui-2_app-old_0zngsf-._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_03c-jc7._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0ks7z5d._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_layout_tsx_0-1gd8z._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_next-devtools_index_0toj4cp.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0u-w3n0._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_0z1npdl._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_05478i.._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_components_builtin_global-error_0-1gd8z.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_leads_%5Bid%5D_page_tsx_0hc05zs._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/founder.jpg",
+        "status": 200,
+        "ok": true,
+        "contentType": "image/jpeg",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_lucide-react_dist_esm_icons_0f_e6cn._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-dom_0pqswcm._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0tojobd._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0yjw1oe._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/json",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/sarah.jpg",
+        "status": 200,
+        "ok": true,
+        "contentType": "image/jpeg",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/4960b5ca-dbef-4d75-b5cf-08e58adc01b1/export/",
+        "status": 200,
+        "ok": true,
+        "contentType": "text/csv; charset=utf-8",
+        "contentDisposition": "attachment; filename=\"eastaura-lead-content-pipeline-qa-20260428161043875-4j1on7.csv\"",
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+        "status": 200,
+        "ok": true,
+        "contentType": "text/html; charset=utf-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_07v4vui._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_globals_00bmr3v.css",
+        "status": 200,
+        "ok": true,
+        "contentType": "text/css; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_02l5t8x._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-server-dom-turbopack_11vv2o-._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_%40swc_helpers_cjs_0zm1-0s._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_0rqeker._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/turbopack-workbecnch-ui-2_app-old_0zngsf-._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_layout_tsx_05qv1_x._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_03c-jc7._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_layout_tsx_0-1gd8z._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_0z1npdl._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0ks7z5d._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_next-devtools_index_0toj4cp.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-dom_0pqswcm._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/founder.jpg",
+        "status": 200,
+        "ok": true,
+        "contentType": "image/jpeg",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_components_builtin_global-error_0-1gd8z.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_leads_%5Bid%5D_page_tsx_0hc05zs._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_lucide-react_dist_esm_icons_0f_e6cn._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0u-w3n0._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_05478i.._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0tojobd._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0yjw1oe._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/json",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/sarah.jpg",
+        "status": 200,
+        "ok": true,
+        "contentType": "image/jpeg",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/4edd10c5-c45e-486c-a5d2-36e997d3f555/export/",
+        "status": 200,
+        "ok": true,
+        "contentType": "text/csv; charset=utf-8",
+        "contentDisposition": "attachment; filename=\"eastaura-lead-notification-qa-20260428094648567-987l44.csv\"",
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/leads/00000000-0000-0000-0000-000000000000/",
+        "status": 200,
+        "ok": true,
+        "contentType": "text/html; charset=utf-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_07v4vui._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_globals_00bmr3v.css",
+        "status": 200,
+        "ok": true,
+        "contentType": "text/css; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_02l5t8x._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-server-dom-turbopack_11vv2o-._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_%40swc_helpers_cjs_0zm1-0s._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_0rqeker._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/turbopack-workbecnch-ui-2_app-old_0zngsf-._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_layout_tsx_05qv1_x._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_03c-jc7._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0ks7z5d._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_0z1npdl._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_next-devtools_index_0toj4cp.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_layout_tsx_0-1gd8z._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_app_workbench_leads_%5Bid%5D_page_tsx_0hc05zs._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_lucide-react_dist_esm_icons_0f_e6cn._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_05478i.._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/workbench/avatars/founder.jpg",
+        "status": 200,
+        "ok": true,
+        "contentType": "image/jpeg",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_client_components_builtin_global-error_0-1gd8z.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_compiled_react-dom_0pqswcm._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/workbecnch-ui-2_app-old_src_0u-w3n0._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0tojobd._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_0yjw1oe._.js",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/javascript; charset=UTF-8",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      },
+      {
+        "method": "GET",
+        "url": "http://127.0.0.1:5182/api/workbench/leads/00000000-0000-0000-0000-000000000000/",
+        "status": 200,
+        "ok": true,
+        "contentType": "application/json",
+        "contentDisposition": null,
+        "rootExportInUrl": false
+      }
+    ]
+  },
+  "console": [
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "lineNumber": 2431,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "lineNumber": 2431,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "lineNumber": 2431,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "lineNumber": 2431,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "location": {
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "lineNumber": 2431,
+        "columnNumber": 27
+      }
+    },
+    {
+      "type": "log",
+      "text": "[HMR] connected",
+      "location": {
+        "url": "http://127.0.0.1:5182/_next/static/chunks/10vf_next_dist_05wvt4r._.js",
+        "lineNumber": 2431,
+        "columnNumber": 27
+      }
+    }
+  ],
+  "pageErrors": [],
+  "security": {
+    "browserRequestCount": 79,
+    "browserResponseCount": 79,
+    "anyAuthorizationOrBearerInBrowserRequestUrlOrHeaders": false,
+    "anyRootLeadsExportRequest": false,
+    "anySensitiveInStorageCookiesOrDom": false,
+    "anyRootExportInDom": false
+  },
+  "verdictHints": {
+    "positiveFlowsPass": true,
+    "missingFlowPass": true,
+    "consoleErrorCount": 0,
+    "pageErrorCount": 0,
+    "noBrowserTokenExposure": true,
+    "noRootExportRequest": true
+  }
+}

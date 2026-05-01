@@ -25,12 +25,14 @@ import {
   Sparkles,
   FileText,
   ExternalLink,
+  Download,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AgentPanel } from "@/components/workbench/AgentPanel";
 import type { Lead } from "@/lib/workbench/types";
 import {
   addLeadNote,
+  exportLeadCsv,
   getLeadAvatar,
   getLeadDetail,
   getLeadGoals,
@@ -55,15 +57,19 @@ export default function LeadDetail() {
   const [isSavingStatus, setIsSavingStatus] = useState(false);
   const [isAddingNote, setIsAddingNote] = useState(false);
   const [isTriageRunning, setIsTriageRunning] = useState(false);
+  const [isExportingCsv, setIsExportingCsv] = useState(false);
   const [noteBody, setNoteBody] = useState("");
   const [actionError, setActionError] = useState("");
 
   const loadLead = useCallback(() => {
     getLeadDetail(id)
       .then((data) => {
-        setLead(data.lead ?? null);
-        setNotes(data.notes ?? []);
-        setEvents([...(data.statusEvents ?? []), ...(data.leadEvents ?? [])]);
+        const leadFromResponse = data.lead ?? null;
+        const hasMismatchedFallbackLead = Boolean(data.usingFallback && leadFromResponse?.id && leadFromResponse.id !== id);
+
+        setLead(hasMismatchedFallbackLead ? null : leadFromResponse);
+        setNotes(hasMismatchedFallbackLead ? [] : data.notes ?? []);
+        setEvents(hasMismatchedFallbackLead ? [] : [...(data.statusEvents ?? []), ...(data.leadEvents ?? [])]);
         setMeta({ usingFallback: data.usingFallback, error: data.error });
       })
       .catch((error: unknown) => {
@@ -128,6 +134,24 @@ export default function LeadDetail() {
       setActionError(error instanceof Error ? error.message : "Triage retry failed.");
     } finally {
       setIsTriageRunning(false);
+    }
+  };
+
+  const handleExportCsv = async () => {
+    setIsExportingCsv(true);
+    setActionError("");
+    try {
+      const { blob, filename } = await exportLeadCsv(id);
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = filename;
+      anchor.click();
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      setActionError(error instanceof Error ? error.message : "CSV export failed.");
+    } finally {
+      setIsExportingCsv(false);
     }
   };
 
@@ -400,6 +424,9 @@ export default function LeadDetail() {
               </div>
               <Button variant="outline" className="w-full border-eastaura-warmgray gap-2" disabled={isTriageRunning} onClick={handleTriage}>
                 <Sparkles className="w-4 h-4" /> {isTriageRunning ? "Running triage..." : "Re-run AI triage"}
+              </Button>
+              <Button variant="outline" className="w-full border-eastaura-warmgray gap-2" disabled={isExportingCsv} onClick={handleExportCsv}>
+                <Download className="w-4 h-4" /> {isExportingCsv ? "Exporting CSV..." : "Export CSV"}
               </Button>
               <Button className="w-full bg-eastaura-forest hover:bg-eastaura-forest-light text-eastaura-cream gap-2">
                 <Video className="w-4 h-4" /> Invite Video Consultation

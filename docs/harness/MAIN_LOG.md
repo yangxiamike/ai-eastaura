@@ -1,4 +1,4 @@
-# MAIN_LOG
+﻿# MAIN_LOG
 
 ## 日志规则
 
@@ -27,14 +27,27 @@
 | 2026-05-01 15:30 +08:00 | 修正复验口径：browser-flow 岗位不得由 Coordinator 代测，第二轮 browser-flow 报告改为 BLOCKED | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | 用户反馈：browser 不能代测 | `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-2.md`; `docs/harness/RUNTIME_INDEX.md`; `docs/harness/ACTIVE_TASK.md`; `docs/harness/MAIN_LOG.md` | DONE |
 | 2026-05-01 15:40 +08:00 | 记录下一会话逐个调 Agent 的全面真实测试清单 | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | 用户要求：下个会话调 Agent 逐个完成 | `docs/harness/ENG-WB-CSV-001_NEXT_AGENT_RUN.md`; `docs/harness/RUNTIME_INDEX.md`; `docs/harness/ACTIVE_TASK.md` | DONE |
 | 2026-05-01 15:40 +08:00 | 补充全面真实测试清单：特殊字符、失败页面收敛、请求边界证据、PASS/FAIL/BLOCKED/DATA_NOT_AVAILABLE 判定规则 | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | 用户要求：补充样例和 blocked 情况 | `docs/harness/ENG-WB-CSV-001_NEXT_AGENT_RUN.md` | DONE |
+| 2026-05-01 15:54 +08:00 | 第三轮真实测试启动 root `:3000` 与 Workbench `:5182`，健康检查均可达 | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | `npm run dev:clean`; `npm run workbench:dev:clean` | terminal verification | PASS |
+| 2026-05-01 15:54 +08:00 | 执行 `api-contract-tester-3`：固定 lead、2 个动态真实 lead、空值/多 goals/特殊字符、负向路径和客户端安全边界通过 | ENG-WB-CSV-001 | Test | api-contract-tester | GPT-5 | local root/workbench dev server | `docs/harness/reports/ENG-WB-CSV-001-api-contract-tester-3.md` | PASS |
+| 2026-05-01 15:54 +08:00 | 执行 `browser-flow-tester-3`：子 Agent 自己初始化 Browser Use `iab` backend 失败，服务端口可达但未执行真实浏览器点击流 | ENG-WB-CSV-001 | Test | browser-flow-tester | GPT-5 | Browser skill + local Workbench | `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-3.md` | BLOCKED |
+| 2026-05-01 15:54 +08:00 | Coordinator 汇总第三轮报告：API PASS、browser-flow BLOCKED；检查未把 DATA_NOT_AVAILABLE、Coordinator 诊断或 fallback 当 PASS 证据；GitHub Gate 不推进 | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | reports `*-3.md` | `docs/harness/RUNTIME_INDEX.md`; `docs/harness/ACTIVE_TASK.md`; `docs/harness/MAIN_LOG.md` | BLOCKED |
+| 2026-05-01 15:54 +08:00 | 执行静态验证：Workbench lint、TypeScript、harness rg 和 git status 完成 | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | Workbench source; `docs/harness` | terminal verification | PASS |
+| 2026-05-01 15:54 +08:00 | 按测试任务要求关闭本轮 root `:3000` 与 Workbench `:5182` localhost | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | local dev server listeners | terminal verification | DONE |
+| 2026-05-01 16:19 +08:00 | 按用户要求重跑 `browser-flow-tester-3`：子 Agent 自己再次初始化 Browser Use `iab` backend，root/Workbench smoke 均可达，但仍未发现 Codex IAB backend | ENG-WB-CSV-001 | Test | browser-flow-tester | GPT-5 | Browser skill + local Workbench | `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-3.md` | BLOCKED |
+| 2026-05-01 17:01 +08:00 | 按 Playwright-first 工作流派发 `browser-flow-tester-4` 子 Agent；固定/动态 lead 正向导出通过，但不存在 lead 页面仍展示 fallback `Sarah Mitchell` 和 `Export CSV` | ENG-WB-CSV-001 | Test | browser-flow-tester-4 | GPT-5 | `docs/harness/ACCEPTANCE.md`; browser-flow tester card; local root/workbench dev server | `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-4.md`; `docs/harness/evidence/ENG-WB-CSV-001-browser-flow-tester-4-browser-evidence.md` | FAIL |
+| 2026-05-01 17:06 +08:00 | Dev 修复 browser-flow 失败项：Lead Detail 对 `usingFallback` 且响应 lead id 与 URL id 不一致的结果进入 `Lead not found` 空状态 | ENG-WB-CSV-001 | Dev | dev-fix-browser-flow | GPT-5 | `browser-flow-tester-4` 报告与证据 | `workbecnch-ui-2/app-old/src/app/workbench/leads/[id]/page.tsx` | DONE |
+| 2026-05-01 17:09 +08:00 | 执行 `browser-flow-tester-5` 子 Agent 复验：固定/动态 lead 导出、Exporting 状态、请求边界、浏览器侧 token 暴露、console/pageerror 和不存在 lead 页面均通过 | ENG-WB-CSV-001 | Test | browser-flow-tester-5 | GPT-5 | Dev 修复后的 local root/workbench dev server | `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-5.md`; `docs/harness/evidence/ENG-WB-CSV-001-browser-flow-tester-5-browser-evidence.md` | PASS |
+| 2026-05-01 17:11 +08:00 | Coordinator 汇总：`api-contract-tester-3` PASS + `browser-flow-tester-5` PASS；Workbench lint、TypeScript、harness rg、git status 完成；状态更新为等待 GitHub Gate | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | reports `api-contract-tester-3` / `browser-flow-tester-5` | `docs/harness/RUNTIME_INDEX.md`; `docs/harness/ACTIVE_TASK.md`; `docs/harness/MAIN_LOG.md` | TEST_PASS_PENDING_GITHUB_GATE |
 
 ## 本轮说明
 
-- 已在允许范围内修改产品代码。
-- 已修改 Workbench Lead Detail 页面。
-- 已新增 Workbench export route。
-- 未修改根 `src/app/api/leads/export/route.ts`。
-- 已运行真实 Dev/Test。
-- 第二轮多 Agent 真实复验中，`api-contract-tester` PASS；`browser-flow-tester` 子 Agent 因 browser-use 后端不可用而 BLOCKED。
-- Coordinator 浏览器诊断不得替代 `browser-flow-tester` 岗位验收，不能作为 PASS 证据。
-- GitHub Gate 未启动。
+- 已按用户要求调用子 Agent 执行完整 harness browser-flow 收口。
+- `api-contract-tester-3`：PASS，固定 lead、2 个动态真实 lead、空值/多 goals/特殊字符样例、负向路径和客户端安全边界均有真实证据。
+- `browser-flow-tester-4`：FAIL，Playwright-first 点击流可执行；正向导出通过，但不存在 lead 页面仍展示 fallback `Sarah Mitchell` 和 `Export CSV`。
+- Dev 修复：Lead Detail 识别 mismatch fallback，不再把与 URL id 不一致的 fallback lead 当作当前 lead 渲染。
+- `browser-flow-tester-5`：PASS，固定/动态 lead 导出、请求边界、浏览器侧 token 暴露、console/pageerror、不存在 lead 页面均通过。
+- Coordinator 静态验证：Workbench `npm run lint` 与 `npx tsc --noEmit` 通过，harness `rg` 与 `git status --short` 已执行。
+- GitHub Gate 未启动；当前状态为 `TEST_PASS_PENDING_GITHUB_GATE`，不得标记最终 PASS。
+
+
+
