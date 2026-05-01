@@ -38,6 +38,7 @@
 | 2026-05-01 17:06 +08:00 | Dev 修复 browser-flow 失败项：Lead Detail 对 `usingFallback` 且响应 lead id 与 URL id 不一致的结果进入 `Lead not found` 空状态 | ENG-WB-CSV-001 | Dev | dev-fix-browser-flow | GPT-5 | `browser-flow-tester-4` 报告与证据 | `workbecnch-ui-2/app-old/src/app/workbench/leads/[id]/page.tsx` | DONE |
 | 2026-05-01 17:09 +08:00 | 执行 `browser-flow-tester-5` 子 Agent 复验：固定/动态 lead 导出、Exporting 状态、请求边界、浏览器侧 token 暴露、console/pageerror 和不存在 lead 页面均通过 | ENG-WB-CSV-001 | Test | browser-flow-tester-5 | GPT-5 | Dev 修复后的 local root/workbench dev server | `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-5.md`; `docs/harness/evidence/ENG-WB-CSV-001-browser-flow-tester-5-browser-evidence.md` | PASS |
 | 2026-05-01 17:11 +08:00 | Coordinator 汇总：`api-contract-tester-3` PASS + `browser-flow-tester-5` PASS；Workbench lint、TypeScript、harness rg、git status 完成；状态更新为等待 GitHub Gate | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | reports `api-contract-tester-3` / `browser-flow-tester-5` | `docs/harness/RUNTIME_INDEX.md`; `docs/harness/ACTIVE_TASK.md`; `docs/harness/MAIN_LOG.md` | TEST_PASS_PENDING_GITHUB_GATE |
+| 2026-05-01 18:55 +08:00 | GitHub Gate 完成：修复初始仓库 CI 触发条件，创建 PR #1，pull_request CI `25211826147` PASS，记录 self-review note，并 merge 到 `eng-wb-csv-001-base` | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | GitHub PR / Actions | `https://github.com/yangxiamike/ai-eastaura/pull/1`; merge commit `273514eb130f68545b7cf29216a3613e55921e8b` | PASS |
 
 ## 本轮说明
 
@@ -47,7 +48,7 @@
 - Dev 修复：Lead Detail 识别 mismatch fallback，不再把与 URL id 不一致的 fallback lead 当作当前 lead 渲染。
 - `browser-flow-tester-5`：PASS，固定/动态 lead 导出、请求边界、浏览器侧 token 暴露、console/pageerror、不存在 lead 页面均通过。
 - Coordinator 静态验证：Workbench `npm run lint` 与 `npx tsc --noEmit` 通过，harness `rg` 与 `git status --short` 已执行。
-- GitHub Gate 未启动；当前状态为 `TEST_PASS_PENDING_GITHUB_GATE`，不得标记最终 PASS。
+- GitHub Gate 已完成：PR #1 已 merge，CI PASS；当前状态为最终 PASS。
 
 
 
