@@ -80,7 +80,7 @@ EASTAURA_INTAKE_DUPLICATE_WINDOW_MS=600000
 TURNSTILE_SECRET_KEY=
 ```
 
-当 `SUPABASE_URL` 和 `SUPABASE_SERVICE_ROLE_KEY` 同时存在时，API 使用 Supabase；否则使用内存 mock。
+当 `SUPABASE_URL` 和 `SUPABASE_SERVICE_ROLE_KEY` 同时存在时，API 使用 Supabase；否则使用内存 mock。新环境需按顺序执行 `supabase/migrations/202604270001_mvp_backend.sql`、`supabase/migrations/202604280001_content_pipeline_p0.sql`、`supabase/migrations/202604290001_dashboard_content_aggregation_rpc.sql`。
 
 生产构建下，如果未配置 `EASTAURA_ADMIN_API_TOKEN` 且没有显式设置 `EASTAURA_ALLOW_OPEN_ADMIN_API=true`，内部 API 会 fail-close 返回 `503`。本地 `next start` smoke test 如需无 token 调试，可以临时设置 `EASTAURA_ALLOW_OPEN_ADMIN_API=true`。
 
@@ -168,7 +168,7 @@ $env:FEISHU_BOT_SECRET="..."
   响应包含 `notificationChannels` 以及 `notificationConfigState`（仅布尔状态，不含密钥明文），可用于快速判断 feishu/email 是否已被服务进程加载。
 - `POST /api/feishu/events`：飞书自建应用机器人事件回调，支持 URL 校验和基础命令回复。
 - `POST /api/intake`：提交 Intake，创建 lead、AI run 和通知记录。
-- `GET /api/dashboard/stats`：Workbench Dashboard 聚合数据，内部 API。
+- `GET /api/dashboard/stats`：Workbench Dashboard 聚合数据，内部 API；Supabase 环境优先通过 `get_dashboard_stats()` RPC 在数据库侧聚合。
 - `GET /api/leads`：查看 lead 列表，内部 API。支持 `status`、`riskLevel`、`source`、`country`、`q`、`limit`、`offset` 查询参数。
 - `GET /api/leads/export`：按筛选条件导出 lead CSV，内部 API。
 - `GET /api/leads/{id}`：查看 lead 详情、AI run、备注和状态事件，内部 API。
@@ -187,7 +187,7 @@ $env:FEISHU_BOT_SECRET="..."
 - `GET/PATCH /api/review-tasks` 与 `PATCH /api/review-tasks/{id}`：查看和更新人工审核任务，内部 API。
 - `POST /api/publish-posts`：记录人工发布或排期，不自动发布到外部平台。
 - `POST /api/content-metrics`：录入内容表现或 lead_submit 指标。
-- `GET /api/content-attribution`：按 campaign/source/channel 汇总内容归因。
+- `GET /api/content-attribution`：按 campaign/source/channel 汇总内容归因；Supabase 环境优先通过 `get_content_attribution(...)` RPC 在数据库侧聚合。
 
 Workbench 内部代理 API 位于 `workbecnch-ui-2/app-old/src/app/api/workbench/`，浏览器只访问 `/api/workbench/*`，由 Workbench 服务端读取 `EASTAURA_API_BASE_URL` 和 `EASTAURA_ADMIN_API_TOKEN` 后转发到根项目 API。
 
@@ -208,7 +208,7 @@ CI 已内置 `.github/workflows/verify.yml`：
 - `src/lib/domain/`：业务类型和请求校验。
 - `src/lib/server/`：repository 层、Supabase client、内存 fallback、admin guard、Intake 防滥用、Skill 读取、Lead triage、LLM 适配、通知投递和通知记录逻辑。
 - `workbecnch-ui-2/app-old/`：新版 Workbench Next.js 原型，覆盖内容、视频、日历、归因、线索、审核、通知、Skill、设置和合作方资产页面；`src/lib/workbench/i18n.ts` 与 `LanguageProvider` 提供系统级中英文切换，`src/app/api/workbench/` 提供服务端代理，Dashboard/Leads/Lead Detail/Notifications/Content/Review/Publishing/Attribution 已接入真实根 API。
-- `supabase/migrations/`：Supabase 表结构 migration。
+- `supabase/migrations/`：Supabase 表结构和 RPC migration。
 - `skills/`：版本化 Skill 文档、schema 和示例。
 - `docs/PRD.md`：Eastaura 产品需求文档。
 - `docs/MVP_SYSTEM_DESIGN.md`：MVP 系统设计文档。

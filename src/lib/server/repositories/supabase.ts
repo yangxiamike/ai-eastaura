@@ -194,6 +194,52 @@ type ContentMetricRow = {
   metadata: Record<string, unknown>;
 };
 
+type DashboardStatsRpcRow = {
+  total_leads: number | string;
+  new_leads: number | string;
+  needs_review: number | string;
+  high_intent: number | string;
+  high_risk: number | string;
+  failed_notifications: number | string;
+  by_status: Record<string, number | string> | null;
+  by_risk_level: Record<string, number | string> | null;
+  by_source: Record<string, number | string> | null;
+  by_country: Record<string, number | string> | null;
+};
+
+type ContentAttributionRpcRow = {
+  total_metrics: number | string;
+  total_metric_value: number | string;
+  leads_attributed: number | string;
+  by_metric_type: Record<string, number | string> | null;
+  by_campaign: Record<string, number | string> | null;
+  by_source: Record<string, number | string> | null;
+  by_channel: Record<string, number | string> | null;
+};
+
+type DashboardStatsFallbackLeadRow = {
+  status: LeadStatus;
+  risk_level: Lead["riskLevel"] | null;
+  intent_score: number | string | null;
+  source: string;
+  country: string | null;
+};
+
+type DashboardStatsFallbackNotificationRow = {
+  delivery_error: string | null;
+};
+
+type ContentAttributionFallbackRow = {
+  campaign_id: string;
+  lead_id: string | null;
+  source: string | null;
+  channel: PublishChannel | null;
+  metric_type: string;
+  metric_value: number | string;
+};
+
+const FALLBACK_AGGREGATION_ROW_LIMIT = 10000;
+
 export const supabaseRepository: EastauraRepository = {
   async createLead(payload) {
     const supabase = getSupabaseAdmin();
@@ -1140,49 +1186,75 @@ export const supabaseRepository: EastauraRepository = {
   },
 
   async getContentAttribution(query) {
-    let builder = getSupabaseAdmin()
-      .from("content_metrics")
-      .select("*")
-      .limit(10000);
+    const { data, error } = await getSupabaseAdmin()
+      .rpc("get_content_attribution", {
+        p_campaign_id: query.campaignId ?? null,
+        p_source: query.source ?? null,
+        p_channel: query.channel ?? null,
+        p_from: query.from ?? null,
+        p_to: query.to ?? null,
+      })
+      .single<ContentAttributionRpcRow>();
 
-    if (query.campaignId) builder = builder.eq("campaign_id", query.campaignId);
-    if (query.source) builder = builder.eq("source", query.source);
-    if (query.channel) builder = builder.eq("channel", query.channel);
-    if (query.from) builder = builder.gte("occurred_at", query.from);
-    if (query.to) builder = builder.lte("occurred_at", query.to);
+    if (error) {
+      if (isMissingRpcFunctionError(error.message, "get_content_attribution")) {
+        return getContentAttributionFallback(query);
+      }
 
-    const { data, error } = await builder.returns<ContentMetricRow[]>();
+      throw new Error(error.message);
+    }
 
-    if (error) throw new Error(error.message);
-
-    return buildContentAttribution(
-      data.map(mapContentMetricRow),
-      query,
-    );
+    return {
+      campaignId: query.campaignId,
+      source: query.source,
+      channel: query.channel,
+      totalMetrics: Number(data.total_metrics),
+      totalMetricValue: Number(data.total_metric_value),
+      leadsAttributed: Number(data.leads_attributed),
+      byMetricType: normalizeNumberRecord(data.by_metric_type),
+      byCampaign: normalizeNumberRecord(data.by_campaign),
+      bySource: normalizeNumberRecord(data.by_source),
+      byChannel: normalizeNumberRecord(data.by_channel),
+    };
   },
 
   async getDashboardStats() {
-    const [leadsResult, notificationsResult] = await Promise.all([
-      getSupabaseAdmin().from("leads").select("*").limit(10000).returns<LeadRow[]>(),
-      getSupabaseAdmin()
-        .from("notifications")
-        .select("*")
-        .limit(10000)
-        .returns<NotificationRow[]>(),
-    ]);
+    const { data, error } = await getSupabaseAdmin()
+      .rpc("get_dashboard_stats")
+      .single<DashboardStatsRpcRow>();
 
-    if (leadsResult.error) {
-      throw new Error(leadsResult.error.message);
+    if (error) {
+      if (isMissingRpcFunctionError(error.message, "get_dashboard_stats")) {
+        return getDashboardStatsFallback();
+      }
+
+      throw new Error(error.message);
     }
 
-    if (notificationsResult.error) {
-      throw new Error(notificationsResult.error.message);
-    }
-
-    return buildDashboardStats(
-      leadsResult.data.map(mapLeadRow),
-      notificationsResult.data.map(mapNotificationRow),
-    );
+    return {
+      totalLeads: Number(data.total_leads),
+      newLeads: Number(data.new_leads),
+      needsReview: Number(data.needs_review),
+      highIntent: Number(data.high_intent),
+      highRisk: Number(data.high_risk),
+      failedNotifications: Number(data.failed_notifications),
+      byStatus: {
+        new: Number(data.by_status?.new ?? 0),
+        triaged: Number(data.by_status?.triaged ?? 0),
+        needs_review: Number(data.by_status?.needs_review ?? 0),
+        contacted: Number(data.by_status?.contacted ?? 0),
+        qualified: Number(data.by_status?.qualified ?? 0),
+        not_fit: Number(data.by_status?.not_fit ?? 0),
+        closed: Number(data.by_status?.closed ?? 0),
+      },
+      byRiskLevel: {
+        low: Number(data.by_risk_level?.low ?? 0),
+        medium: Number(data.by_risk_level?.medium ?? 0),
+        high: Number(data.by_risk_level?.high ?? 0),
+      },
+      bySource: normalizeNumberRecord(data.by_source),
+      byCountry: normalizeNumberRecord(data.by_country),
+    };
   },
 };
 
@@ -1379,11 +1451,47 @@ function mapContentMetricRow(row: ContentMetricRow): ContentMetric {
   };
 }
 
-function buildDashboardStats(
-  leads: Lead[],
-  notifications: NotificationRecord[],
-): DashboardStats {
-  const byStatus = {
+function stripUndefined<T extends Record<string, unknown>>(input: T): T {
+  return Object.fromEntries(
+    Object.entries(input).filter(([, value]) => value !== undefined),
+  ) as T;
+}
+
+function normalizeNumberRecord(
+  input: Record<string, number | string> | null | undefined,
+): Record<string, number> {
+  if (!input) {
+    return {};
+  }
+
+  return Object.fromEntries(
+    Object.entries(input).map(([key, value]) => [key, Number(value)]),
+  );
+}
+
+async function getDashboardStatsFallback(): Promise<DashboardStats> {
+  const [leadsResult, notificationsResult] = await Promise.all([
+    getSupabaseAdmin()
+      .from("leads")
+      .select("status,risk_level,intent_score,source,country")
+      .range(0, FALLBACK_AGGREGATION_ROW_LIMIT - 1)
+      .returns<DashboardStatsFallbackLeadRow[]>(),
+    getSupabaseAdmin()
+      .from("notifications")
+      .select("delivery_error")
+      .range(0, FALLBACK_AGGREGATION_ROW_LIMIT - 1)
+      .returns<DashboardStatsFallbackNotificationRow[]>(),
+  ]);
+
+  if (leadsResult.error) {
+    throw new Error(leadsResult.error.message);
+  }
+
+  if (notificationsResult.error) {
+    throw new Error(notificationsResult.error.message);
+  }
+
+  const byStatus: DashboardStats["byStatus"] = {
     new: 0,
     triaged: 0,
     needs_review: 0,
@@ -1392,19 +1500,24 @@ function buildDashboardStats(
     not_fit: 0,
     closed: 0,
   };
-  const byRiskLevel = {
+  const byRiskLevel: DashboardStats["byRiskLevel"] = {
     low: 0,
     medium: 0,
     high: 0,
   };
   const bySource: Record<string, number> = {};
   const byCountry: Record<string, number> = {};
+  let highIntent = 0;
 
-  for (const lead of leads) {
+  for (const lead of leadsResult.data) {
     byStatus[lead.status] += 1;
 
-    if (lead.riskLevel) {
-      byRiskLevel[lead.riskLevel] += 1;
+    if (lead.risk_level) {
+      byRiskLevel[lead.risk_level] += 1;
+    }
+
+    if (Number(lead.intent_score ?? 0) >= 70) {
+      highIntent += 1;
     }
 
     bySource[lead.source] = (bySource[lead.source] ?? 0) + 1;
@@ -1415,13 +1528,13 @@ function buildDashboardStats(
   }
 
   return {
-    totalLeads: leads.length,
+    totalLeads: leadsResult.data.length,
     newLeads: byStatus.new,
     needsReview: byStatus.needs_review,
-    highIntent: leads.filter((lead) => (lead.intentScore ?? 0) >= 70).length,
+    highIntent,
     highRisk: byRiskLevel.high,
-    failedNotifications: notifications.filter(
-      (notification) => notification.deliveryError,
+    failedNotifications: notificationsResult.data.filter(
+      (notification) => notification.delivery_error !== null,
     ).length,
     byStatus,
     byRiskLevel,
@@ -1430,48 +1543,65 @@ function buildDashboardStats(
   };
 }
 
-function buildContentAttribution(
-  metrics: ContentMetric[],
+async function getContentAttributionFallback(
   query: ContentAttributionQuery,
-): ContentAttributionSummary {
-  const leadIds = new Set(metrics.map((metric) => metric.leadId).filter(Boolean));
+): Promise<ContentAttributionSummary> {
+  let builder = getSupabaseAdmin()
+    .from("content_metrics")
+    .select("campaign_id,lead_id,source,channel,metric_type,metric_value")
+    .range(0, FALLBACK_AGGREGATION_ROW_LIMIT - 1);
+
+  if (query.campaignId) builder = builder.eq("campaign_id", query.campaignId);
+  if (query.source) builder = builder.eq("source", query.source);
+  if (query.channel) builder = builder.eq("channel", query.channel);
+  if (query.from) builder = builder.gte("occurred_at", query.from);
+  if (query.to) builder = builder.lte("occurred_at", query.to);
+
+  const { data, error } = await builder.returns<ContentAttributionFallbackRow[]>();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  const leadIds = new Set(data.map((metric) => metric.lead_id).filter(Boolean));
 
   return {
     campaignId: query.campaignId,
     source: query.source,
     channel: query.channel,
-    totalMetrics: metrics.length,
-    totalMetricValue: sumBy(metrics, (metric) => metric.metricValue),
+    totalMetrics: data.length,
+    totalMetricValue: sumMetricRowsBy(data, (metric) => metric.metric_value),
     leadsAttributed: leadIds.size,
-    byMetricType: groupMetricValues(metrics, (metric) => metric.metricType),
-    byCampaign: groupMetricValues(metrics, (metric) => metric.campaignId),
-    bySource: groupMetricValues(metrics, (metric) => metric.source ?? "unknown"),
-    byChannel: groupMetricValues(metrics, (metric) => metric.channel ?? "unknown"),
+    byMetricType: groupMetricRows(data, (metric) => metric.metric_type),
+    byCampaign: groupMetricRows(data, (metric) => metric.campaign_id),
+    bySource: groupMetricRows(data, (metric) => metric.source ?? "unknown"),
+    byChannel: groupMetricRows(data, (metric) => metric.channel ?? "unknown"),
   };
 }
 
-function stripUndefined<T extends Record<string, unknown>>(input: T): T {
-  return Object.fromEntries(
-    Object.entries(input).filter(([, value]) => value !== undefined),
-  ) as T;
+function sumMetricRowsBy<T>(
+  items: T[],
+  selector: (item: T) => number | string,
+): number {
+  return items.reduce((sum, item) => sum + Number(selector(item)), 0);
 }
 
-function sumBy<T>(items: T[], selector: (item: T) => number): number {
-  return items.reduce((sum, item) => sum + selector(item), 0);
-}
-
-function groupMetricValues(
-  metrics: ContentMetric[],
-  keySelector: (metric: ContentMetric) => string,
+function groupMetricRows(
+  metrics: ContentAttributionFallbackRow[],
+  keySelector: (metric: ContentAttributionFallbackRow) => string,
 ): Record<string, number> {
   const grouped: Record<string, number> = {};
 
   for (const metric of metrics) {
     const key = keySelector(metric);
-    grouped[key] = (grouped[key] ?? 0) + metric.metricValue;
+    grouped[key] = (grouped[key] ?? 0) + Number(metric.metric_value);
   }
 
   return grouped;
+}
+
+function isMissingRpcFunctionError(message: string, functionName: string): boolean {
+  return message.includes(functionName) && message.includes("schema cache");
 }
 
 function normalizeMissingLeadError(message: string): string {

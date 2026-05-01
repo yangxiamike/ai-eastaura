@@ -1,4 +1,4 @@
-# CONTEXT
+﻿# CONTEXT
 
 ## 当前在做
 
@@ -30,6 +30,11 @@
 
 本轮已按“内容生产线 P0 闭环跑通计划”完成获客内容生产最小内部闭环：新增 Campaign、ContentAsset、Storyboard、ReviewTask、PublishPost、ContentMetric 类型、内存 store、Supabase repository 与 `supabase/migrations/202604280001_content_pipeline_p0.sql`；新增 `content_strategy_v0_1`、`short_video_script_v0_1`、`storyboard_v0_1`、`visual_prompt_v0_1`、`review_compliance_v0_1` Skills；新增根 API `/api/campaigns`、`/api/content-assets`、脚本/分镜/合规生成、`/api/review-tasks`、`/api/publish-posts`、`/api/content-metrics` 和 `/api/content-attribution`；`POST /api/intake` 已保存 `campaign` 与 UTM 字段。Workbench Content Studio、POV Video Generator、Review Tasks、Publishing Calendar、Lead Attribution 已通过 `/api/workbench/*` 接真实根 API，并处理 trailing slash，避免 POST 308。验证：根 `npm run typecheck` 通过；Workbench `npm run lint` 通过；根与 Workbench 沙箱外 `npm run build` 通过；根 API smoke 跑通 `drafted -> storyboarded(5 scenes) -> approved -> published -> intake UTM -> metric tracked -> attributionLeads=1`；Workbench 代理 smoke 跑通创建内容、生成脚本/分镜、合规审核和 review task，全部 `usingFallback=false`。
 2026-04-28 补充（内容生产管道 P0 复验收固化）：新增 `scripts/verify-content-pipeline.cjs` 与 `npm run verify:content-pipeline`，默认打干净根服务 `http://127.0.0.1:3010`，自动创建唯一 runId 的 campaign/content asset，依次验证脚本、5 段分镜、合规审核任务、人工批准、发布记录、带 UTM intake、`lead_submit` metric 和 `/api/content-attribution`。实跑结果 `status=DONE`，runId=`20260428093901524-if21m8`，`persistence=supabase`、`adminGuard=configured`、`leadsAttributed=1`。Workbench 代理在沙箱外临时启动 `:3010` root + `:5182` Workbench dev 后复验 `npm run verify:workbench-proxy`，结果 `status=DONE`，dashboard/leads/notifications/content_assets/review_tasks/content_attribution 均 200 且 `usingFallback=false`。已补 `start:clean:3010` / `dev:clean:3010` 命令和 README 说明；本轮不接图片/视频 provider 或外部自动发布。
+2026-04-29 补充（DeepSeek P1 聚合优化）：采纳 `docs/CODEX_NEXT_PLAN.md` 中 P1 建议，暂不执行 P0 目录删除/重命名和 P2 写事务化。已由 `gpt-5.3-codex` worker 将 Supabase `getDashboardStats` 与 `getContentAttribution` 改为优先调用数据库侧 RPC，并新增 `supabase/migrations/202604290001_dashboard_content_aggregation_rpc.sql`，包含 `get_dashboard_stats()` 与 `get_content_attribution(...)`。主控复验发现当前 Supabase 尚未执行新 migration 时接口会报 RPC 不存在，因此补了“仅 RPC 缺失时启用”的兼容 fallback，保证现有系统不断；执行 migration 后会自动走数据库聚合。验证：`npm run typecheck` 通过；`npm run build` 沙箱外通过；最新构建 `:3010` 下 `/api/dashboard/stats` 与 `/api/content-attribution` 均返回 200；`npm run verify:content-pipeline` 返回 `DONE`，runId=`20260428161043875-4j1on7`，`leadsAttributed=1`。
+2026-04-29 补充（Codex 编码约定校准）：已审阅 DeepSeek 写入的 `docs/CODEX_CONVENTIONS.md`，保留“不提前抽共享 utils、route handler 不手写返回类型、Workbench token 不进浏览器、LLM 调用必须 fallback”等核心纪律；同时把“别写注释、别引库、别拆 repository interface、别加 try/catch”等绝对表述调整为当前阶段默认约定，并补充例外条件，避免后续 Agent 把协作纪律误用成不可变禁令。
+
+2026-05-01 补充（ENG-WB-CSV-001 完整 harness browser flow 收口）：已按 `D:\智能体循环` harness 规则调用子 Agent 重跑 Workbench Lead Detail CSV export 浏览器流程。第 4 轮 `browser-flow-tester` 使用临时 Playwright probe 发现负向页失败：不存在 lead 页面在 root 404 后仍展示 fallback `Sarah Mitchell` 和 `Export CSV`。随后 Dev 子 Agent 只改 `workbecnch-ui-2/app-old/src/app/workbench/leads/[id]/page.tsx`，当 `usingFallback` 且响应 lead id 与 URL id 不一致时进入 `Lead not found` 空状态。第 5 轮 `browser-flow-tester` PASS：固定 lead 与动态 lead 导出、`Exporting CSV...` 状态恢复、Workbench proxy 请求边界、浏览器侧 token 暴露检查、console/pageerror 和不存在 lead 页面均通过。运行态报告/证据位于 `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-4.md`、`docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-5.md` 和 `docs/harness/evidence/`；`api-contract-tester-3` 仍为 PASS。当前 harness 状态为 `TEST_PASS_PENDING_GITHUB_GATE`，GitHub Gate 尚未启动，不能标记最终 PASS。
+2026-05-01 补充（ENG-WB-CSV-001 GitHub Gate 前置复查）：已配置 remote `origin=https://github.com/yangxiamike/ai-eastaura.git`，但 `gh auth status` 仍显示未登录，`git push -u origin codex-eng-wb-csv-real-testing` 未成功返回，无法创建 PR / CI / Review / Merge。`docs/harness/ACTIVE_TASK.md`、`RUNTIME_INDEX.md`、`MAIN_LOG.md` 已更新为 GitHub Gate auth/push `BLOCKED`。当前 Test Gate 仍为 PASS，但任务不得标记最终 PASS；下一步需完成 `gh auth login` 或提供有效 `GH_TOKEN`，并继续避免把无关未提交改动混入 `ENG-WB-CSV-001` PR。
 
 ## 上次做到哪里
 
@@ -130,9 +135,13 @@
 
 ## 当前阻塞
 
+- ENG-WB-CSV-001 完整 harness browser-flow 已收口：api-contract-tester-3 PASS；browser-flow-tester-4 使用 Playwright probe 发现不存在 lead 页面 fallback 数据误展示问题；Dev 子 Agent 修复后，browser-flow-tester-5 PASS。当前 Test Gate 已通过，但 GitHub Gate 因 `gh` 未登录 / push 未成功而 `BLOCKED`，仍不得标记最终 PASS；下一步应完成 GitHub auth 后继续 PR / CI / Review / Merge。
+
 - 尚未确定首发城市、合作机构资质、目标客群国家和价格带。
 - 尚未确定完整视觉系统、域名、支付方式和隐私政策细节；logo 方向已先选定 01。
 - 后端已预留 Supabase、真实 LLM、Resend 和飞书 Webhook 接口；本地会话已验证 `persistence=supabase` 且 intake->leads 可回读，飞书外发强校验已 `DONE`。当前通知侧剩余阻塞是 Resend 邮件通道缺少真实 `RESEND_API_KEY` 与发件人配置，尚未满足 `EXPECT_NOTIFICATION_CHANNELS=email,feishu` 双通道验收。飞书自建应用事件回调已部署到 Vercel 并通过 challenge 测试，但尚未在飞书后台填入订阅方式、添加消息事件、发布版本，也尚未配置 `FEISHU_APP_ID`/`FEISHU_APP_SECRET` 到 Vercel 环境变量用于机器人主动回复。
+- DeepSeek P1 聚合优化代码已落地并通过验证，但当前 Supabase 仍需手动执行 `supabase/migrations/202604290001_dashboard_content_aggregation_rpc.sql` 才能真正启用数据库侧 RPC 聚合；未执行前代码会使用兼容 fallback 保持接口可用，性能优化不算完全生效。
+- 本轮验证生成的 `.tmp-*` 临时日志已从版本控制清理，并通过 `.gitignore` 忽略；`docs/CODEX_CONVENTIONS.md` 已按当前阶段编码约定纳入文档。
 - 本机终端到 Supabase 的 HTTPS 调用存在工具链问题：`Invoke-WebRequest` 报“基础连接已关闭（接收时发生错误）”，`curl.exe` 报 `SEC_E_NO_CREDENTIALS`；导致本地 `GET /api/leads`、`POST /api/intake` 端到端请求超时，当前不宜把超时误判为业务代码故障。
 - `npm audit --omit=dev` 提示 Next 依赖链中的 PostCSS moderate 漏洞暂无修复版本，需持续关注上游。
 - `workbench-ui` 当前使用独立 Vite + React Router HashRouter，与主项目建议的 Next.js App Router 尚未统一。
@@ -148,6 +157,8 @@
 
 ## 下一步
 
+- ENG-WB-CSV-001 下一步：解除 GitHub Gate auth/push 阻塞（完成 `gh auth login` 或提供有效 `GH_TOKEN`，重新 push branch，创建 PR，等待 CI / Review / Merge，并更新状态文件）。如 CI 或 Review 失败，回到原 Dev 修复并重跑相关 Test 岗位。
+
 - Browser Use 外网恢复建议：重启 Codex Desktop 或新开一次 Codex 会话，让 Node REPL MCP 重新连接并加载真实磁盘上的 `codex-cli 0.125.0`；优先验证 `https://21st.dev/`，因为该站网络可达。`land-book.com` 当前目标站自身返回 Cloudflare challenge，即使 Browser Use 前置检查恢复，也可能仍需换代理节点或使用 21st.dev 作为设计参考来源。
 - Browser Use 本地验收恢复建议：先确认当前会话已挂载可用 `browser-use` MCP server（非仅插件名可见）；挂载后优先重跑 `http://127.0.0.1:3000/intake -> http://127.0.0.1:5182/workbench/` 点击流，并记录 308/console error/lead 可见性证据。
 - 若 Browser Use 运行时继续不可用，可在你确认后临时降级为 Playwright/脚本验收，先保证 `/intake -> Workbench` 业务闭环可重复验证，再等待 Browser Use 运行时恢复。
@@ -158,7 +169,7 @@
 - 建立合作方筛选清单：中医机构、翻译、酒店、接送、保险/应急。
 - 做英文落地页和 10-20 个海外用户访谈，验证卖点、价格和顾虑。
 - 首批目标是获取 3-5 个真实付费客户或 1 个 6-10 人小团，而不是追求大规模曝光。
-- 在 Supabase SQL Editor 按顺序执行 migration：`supabase/migrations/202604270001_mvp_backend.sql` -> `supabase/migrations/202604280001_content_pipeline_p0.sql`，先恢复 `leads` 主链路再验证内容归因链路。
+- 在 Supabase SQL Editor 按顺序执行 migration：`supabase/migrations/202604270001_mvp_backend.sql` -> `supabase/migrations/202604280001_content_pipeline_p0.sql` -> `supabase/migrations/202604290001_dashboard_content_aggregation_rpc.sql`，先恢复 `leads` 主链路，再验证内容归因链路和 Dashboard/Attribution 数据库侧聚合；当前代码在 RPC 未迁移时有兼容 fallback，但性能优化需执行第三个 migration 后才完全生效。
 - 解决本机终端 HTTPS 调用 Supabase 的证书/代理问题后，再复测 `GET /api/leads` 与 `POST /api/intake`，避免把网络层超时与 schema 问题混淆。
 - 配置 `EASTAURA_LLM_*` 环境变量，验证真实 LLM triage 输出，并保留医疗边界、schema 校验和人工审核规则。
 - 配置 `EASTAURA_ADMIN_API_TOKEN`，让 Workbench 调用内部 API 时带 Bearer token。
@@ -183,3 +194,4 @@
 - 后续阶段性变化继续追加到归档或新增日期归档，避免关键商业判断散落在对话中。
 - 后续大任务执行时按新版 `AGENTS.md` 使用 sub-agent 拆分协议：先输出依赖图、写入边界、fallback 策略和主控保留项，再派发 worker；高风险或多文件任务增加 spec reviewer 与 quality reviewer 双审。
 - 如要清理冗余，建议按风险顺序执行：先删 `node_modules`、`dist`、`.npm-cache`、日志、PID、`tsconfig.tsbuildinfo` 和空 profile；再处理重复截图与未引用大图；最后确认是否归档/删除 `workbench-ui/` 旧原型、`workbecnch-ui-2/deploy2/`、Kimi 原型 zip，以及是否重构或删除未引用的飞书辅助模块。
+

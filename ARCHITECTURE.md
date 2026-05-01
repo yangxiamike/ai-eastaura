@@ -21,7 +21,7 @@
 - 通知投递层：in-app 通知始终入库；配置 Resend/飞书后创建外部通知并尝试投递，回写 delivered、delivered_at 和 delivery_error。
 - Lead 查询层：Lead 列表支持状态、风险等级、来源、国家、关键词、limit 和 offset；AI triage 后会把风险等级、fit/intent/risk 分数和摘要快照写回 lead 主记录。
 - Intake 防滥用层：公开表单默认启用内存限流和重复提交防护；配置 Turnstile secret 后进行 Cloudflare Turnstile 校验。
-- 运营统计与导出层：Dashboard stats API 汇总 lead、风险、来源、通知失败；CSV export API 支持按 lead 列表筛选条件导出。
+- 运营统计与导出层：Dashboard stats API 汇总 lead、风险、来源、通知失败；Content Attribution API 汇总内容表现和归因；Supabase 环境优先通过 `get_dashboard_stats()` 与 `get_content_attribution(...)` RPC 在数据库侧聚合，RPC 未迁移时保留兼容 fallback，避免接口中断。CSV export API 支持按 lead 列表筛选条件导出。
 - 验收自动化层：`verify:workbench-proxy`、`verify:notification-channels`、`verify:intake-flow` 与 `verify:all` 构成回归管道；`/api/health` 返回通知配置布尔态，便于快速定位“配置未加载”与“外发失败”。
 - Lead 事件日志层：lead 创建、triage、状态变更、备注、通知创建/投递/失败会写入 `lead_events`，用于漏斗复盘和审计。
 
@@ -76,5 +76,5 @@ Workbench i18n 数据流：管理员进入 Workbench -> `LanguageProvider` 默�
 - 海外市场对中医既有兴趣也有安全和证据顾虑，传播需要强调资质、透明和边界。
 - 中国境内医疗服务、医疗广告、线上诊疗和中药产品出海均存在合规要求。
 - 首发城市和合作机构选择会显著影响品牌可信度、成本和履约稳定性。
-- 当前内存存储只适合本地开发和接口验证，服务重启后数据会丢失；真实使用前需要先应用 `supabase/migrations/202604270001_mvp_backend.sql` 和 `supabase/migrations/202604280001_content_pipeline_p0.sql`。
+- 当前内存存储只适合本地开发和接口验证，服务重启后数据会丢失；真实使用前需要先应用 `supabase/migrations/202604270001_mvp_backend.sql`、`supabase/migrations/202604280001_content_pipeline_p0.sql` 和 `supabase/migrations/202604290001_dashboard_content_aggregation_rpc.sql`。
 - `npm audit --omit=dev` 当前提示 Next 依赖链中的 PostCSS 有 moderate 漏洞且暂无修复版本，需要等待上游或评估版本策略。
