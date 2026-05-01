@@ -34,7 +34,7 @@
 2026-04-29 补充（Codex 编码约定校准）：已审阅 DeepSeek 写入的 `docs/CODEX_CONVENTIONS.md`，保留“不提前抽共享 utils、route handler 不手写返回类型、Workbench token 不进浏览器、LLM 调用必须 fallback”等核心纪律；同时把“别写注释、别引库、别拆 repository interface、别加 try/catch”等绝对表述调整为当前阶段默认约定，并补充例外条件，避免后续 Agent 把协作纪律误用成不可变禁令。
 
 2026-05-01 补充（ENG-WB-CSV-001 完整 harness browser flow 收口）：已按 `D:\智能体循环` harness 规则调用子 Agent 重跑 Workbench Lead Detail CSV export 浏览器流程。第 4 轮 `browser-flow-tester` 使用临时 Playwright probe 发现负向页失败：不存在 lead 页面在 root 404 后仍展示 fallback `Sarah Mitchell` 和 `Export CSV`。随后 Dev 子 Agent 只改 `workbecnch-ui-2/app-old/src/app/workbench/leads/[id]/page.tsx`，当 `usingFallback` 且响应 lead id 与 URL id 不一致时进入 `Lead not found` 空状态。第 5 轮 `browser-flow-tester` PASS：固定 lead 与动态 lead 导出、`Exporting CSV...` 状态恢复、Workbench proxy 请求边界、浏览器侧 token 暴露检查、console/pageerror 和不存在 lead 页面均通过。运行态报告/证据位于 `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-4.md`、`docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-5.md` 和 `docs/harness/evidence/`；`api-contract-tester-3` 仍为 PASS。当前 harness 状态为 `TEST_PASS_PENDING_GITHUB_GATE`，GitHub Gate 尚未启动，不能标记最终 PASS。
-2026-05-01 补充（ENG-WB-CSV-001 GitHub Gate 前置复查）：已配置 remote `origin=https://github.com/yangxiamike/ai-eastaura.git`，但 `gh auth status` 仍显示未登录，`git push -u origin codex-eng-wb-csv-real-testing` 未成功返回，无法创建 PR / CI / Review / Merge。`docs/harness/ACTIVE_TASK.md`、`RUNTIME_INDEX.md`、`MAIN_LOG.md` 已更新为 GitHub Gate auth/push `BLOCKED`。当前 Test Gate 仍为 PASS，但任务不得标记最终 PASS；下一步需完成 `gh auth login` 或提供有效 `GH_TOKEN`，并继续避免把无关未提交改动混入 `ENG-WB-CSV-001` PR。
+2026-05-01 补充（ENG-WB-CSV-001 GitHub Gate 前置复查）：`gh` 本地 token 仍失效，网页登录授权未写入 GitHub CLI 凭据；随后改用已验证可用的 SSH 凭据推进。首次 SSH push 的真实失败点不是认证，而是历史提交 `6fe1a4a` 包含 `Kimi_Agent_Eastaura Wellness Retreat Prototype.zip`（116.68MB），超过 GitHub 100MB 单文件限制。已从当前分支历史移除该 zip，补充 `.gitignore` 忽略 `*.zip`，并保留本地副本。当前分支 `codex-eng-wb-csv-real-testing` 已通过 SSH 推送到 `git@github.com:yangxiamike/ai-eastaura.git`，远端 commit 为 `1432091 chore: ignore local archives`。当前 Test Gate 仍为 PASS，GitHub Gate 已完成 branch push，但尚未创建 PR / 等待 CI / Review / Merge，因此任务仍不得标记最终 PASS。
 
 ## 上次做到哪里
 
@@ -135,7 +135,7 @@
 
 ## 当前阻塞
 
-- ENG-WB-CSV-001 完整 harness browser-flow 已收口：api-contract-tester-3 PASS；browser-flow-tester-4 使用 Playwright probe 发现不存在 lead 页面 fallback 数据误展示问题；Dev 子 Agent 修复后，browser-flow-tester-5 PASS。当前 Test Gate 已通过，但 GitHub Gate 因 `gh` 未登录 / push 未成功而 `BLOCKED`，仍不得标记最终 PASS；下一步应完成 GitHub auth 后继续 PR / CI / Review / Merge。
+- ENG-WB-CSV-001 完整 harness browser-flow 已收口：api-contract-tester-3 PASS；browser-flow-tester-4 使用 Playwright probe 发现不存在 lead 页面 fallback 数据误展示问题；Dev 子 Agent 修复后，browser-flow-tester-5 PASS。当前 Test Gate 已通过，GitHub Gate 已通过 SSH 完成 branch push：`codex-eng-wb-csv-real-testing -> origin/codex-eng-wb-csv-real-testing`。剩余阻塞是 PR / CI / Review / Merge 尚未完成，且 `gh` 本地 token 仍不可用，PR 需要先走 GitHub 网页创建或后续修复 `gh` 凭据；仍不得标记最终 PASS。
 
 - 尚未确定首发城市、合作机构资质、目标客群国家和价格带。
 - 尚未确定完整视觉系统、域名、支付方式和隐私政策细节；logo 方向已先选定 01。
@@ -157,7 +157,7 @@
 
 ## 下一步
 
-- ENG-WB-CSV-001 下一步：解除 GitHub Gate auth/push 阻塞（完成 `gh auth login` 或提供有效 `GH_TOKEN`，重新 push branch，创建 PR，等待 CI / Review / Merge，并更新状态文件）。如 CI 或 Review 失败，回到原 Dev 修复并重跑相关 Test 岗位。
+- ENG-WB-CSV-001 下一步：在 GitHub 网页基于已推送分支 `codex-eng-wb-csv-real-testing` 创建 PR，等待 CI / Review / Merge，并更新状态文件。如 CI 或 Review 失败，回到原 Dev 修复并重跑相关 Test 岗位。`gh` 凭据可后续单独修复，不再阻塞当前 branch push。
 
 - Browser Use 外网恢复建议：重启 Codex Desktop 或新开一次 Codex 会话，让 Node REPL MCP 重新连接并加载真实磁盘上的 `codex-cli 0.125.0`；优先验证 `https://21st.dev/`，因为该站网络可达。`land-book.com` 当前目标站自身返回 Cloudflare challenge，即使 Browser Use 前置检查恢复，也可能仍需换代理节点或使用 21st.dev 作为设计参考来源。
 - Browser Use 本地验收恢复建议：先确认当前会话已挂载可用 `browser-use` MCP server（非仅插件名可见）；挂载后优先重跑 `http://127.0.0.1:3000/intake -> http://127.0.0.1:5182/workbench/` 点击流，并记录 308/console error/lead 可见性证据。
