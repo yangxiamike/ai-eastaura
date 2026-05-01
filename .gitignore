@@ -14,6 +14,7 @@ tsconfig.tsbuildinfo
 # Local/editor noise
 .DS_Store
 Thumbs.db
+*.zip
 .codex-*.log
 .codex-*.pid
 .tmp-*.log
