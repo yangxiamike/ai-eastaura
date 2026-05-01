@@ -3,8 +3,8 @@
 ## 当前任务
 
 - task_id: `ENG-WB-CSV-001`
-- 当前状态: `TEST_PASS_PENDING_GITHUB_GATE`
-- 当前阶段: 完整 harness 已重跑 browser-flow。`browser-flow-tester-4` 通过 Playwright-first 真实点击流发现负向页 FAIL；Dev 修复 Lead Detail fallback mismatch；`browser-flow-tester-5` PASS。结合既有 `api-contract-tester-3` PASS，当前必需 Test 岗位已通过，等待 GitHub Gate。
+- 当前状态: `BLOCKED`
+- 当前阶段: 完整 harness 已重跑 browser-flow。`browser-flow-tester-4` 通过 Playwright-first 真实点击流发现负向页 FAIL；Dev 修复 Lead Detail fallback mismatch；`browser-flow-tester-5` PASS。结合既有 `api-contract-tester-3` PASS，当前必需 Test 岗位已通过；GitHub remote 已配置，但 `gh` 未登录，无法创建 PR / CI / Review / Merge，因此 GitHub Gate 当前 BLOCKED。
 - domain: `ENGINEERING`
 - task_type: `demo_ready`
 
@@ -38,8 +38,9 @@
 - CI: 未运行
 - Review: 未运行
 - Merge: 未执行
-- 当前状态: NOT_STARTED
-- 推进条件: 已满足 Test Gate；下一步可启动 GitHub Gate。
+- 当前状态: BLOCKED_AUTH
+- 阻塞原因: `origin` 已配置为 `https://github.com/yangxiamike/ai-eastaura.git`，但 `gh auth status` 显示未登录；`git push -u origin codex-eng-wb-csv-real-testing` 未成功返回；当前工作区仍有无关未提交改动，不能混入本 PR。
+- 推进条件: 完成 `gh auth login` 或提供有效 `GH_TOKEN`，确认远端写权限，并继续确保无关未提交改动不进入 `ENG-WB-CSV-001` PR。
 
 ## 运行态文件索引
 
@@ -50,7 +51,7 @@
 | `ACCEPTANCE.md` | CSV-01 至 CSV-05 验收项和测试岗位 | 已创建 |
 | `BUILD_PLAN.md` | 能力标签、测试岗位、允许/禁止范围、阶段计划 | 已创建 |
 | `ARCH_BOUNDARY.md` | Workbench proxy、根 API、admin token、CSV 生成边界 | 已创建 |
-| `ACTIVE_TASK.md` | 当前任务卡，状态 `TEST_PASS_PENDING_GITHUB_GATE` | 已更新 |
+| `ACTIVE_TASK.md` | 当前任务卡，状态 `BLOCKED`，阻塞于 GitHub Gate auth/push | 已更新 |
 | `MAIN_LOG.md` | harness 运行态事件日志 | 已更新 |
 | `reports/ENG-WB-CSV-001-api-contract-tester-3.md` | 第三轮 API 合约真实测试报告 | PASS |
 | `reports/ENG-WB-CSV-001-browser-flow-tester-4.md` | Playwright-first browser-flow 第 4 轮报告 | FAIL |
@@ -74,10 +75,11 @@
 ## 当前阻塞
 
 - 当前无 Test 阻塞。
-- GitHub Gate 未启动，因此任务不得标记最终 PASS。
+- GitHub Gate 已尝试启动但因 `gh` 未登录 / push 未成功而 BLOCKED，因此任务不得标记最终 PASS。
 
 ## 下一步
 
-1. 启动 GitHub Gate：确认 branch、创建 PR、等待 CI / Review。
-2. 若 CI 或 Review 失败，回到原 Dev 修复并重跑相关测试岗位。
-3. GitHub Gate 完成且状态文件更新后，Coordinator 才能标记最终 PASS。
+1. 完成 `gh auth login` 或设置有效 `GH_TOKEN`，确认对 `yangxiamike/ai-eastaura` 有 push / PR / CI 读取权限。
+2. 重新推送 `codex-eng-wb-csv-real-testing`，创建 PR，等待 CI / Review。
+3. 若 CI 或 Review 失败，回到原 Dev 修复并重跑相关测试岗位。
+4. GitHub Gate 完成且状态文件更新后，Coordinator 才能标记最终 PASS。

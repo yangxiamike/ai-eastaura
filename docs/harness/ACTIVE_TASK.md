@@ -25,7 +25,7 @@
 - Dev 修复：在 Lead Detail 页面识别 `usingFallback` 且响应 lead id 与 URL id 不一致的情况，进入 `Lead not found` 空状态，避免渲染 fallback lead 和导出按钮。
 - `browser-flow-tester-5`: PASS。固定 lead、动态 lead、请求边界、浏览器侧 token 暴露、console/pageerror、下载状态和不存在 lead 页面均通过。
 - Coordinator 静态验证：`npm run lint` PASS，`npx tsc --noEmit` PASS，harness `rg` 与 `git status --short` 已执行。
-- GitHub Gate 尚未启动；当前状态为 `TEST_PASS_PENDING_GITHUB_GATE`。
+- GitHub Gate 已尝试启动；remote 已配置，但 `gh` 未登录且 push 未成功，当前阻塞在 GitHub Gate auth/push。
 
 ## 对应 PRD 条目
 
@@ -177,6 +177,7 @@
 ## 阻塞处理提示
 
 - 当前无 Test 阻塞。
+- GitHub Gate 当前 BLOCKED：需要完成 `gh auth login` 或提供有效 `GH_TOKEN`，并确认远端写权限。
 - 若进入 GitHub Gate 后 CI 或 Review 失败，应回到原 Dev 修复，再重跑相关失败测试岗位。
 
 ## 完成判断
@@ -195,14 +196,15 @@
 - CI: 未运行
 - Review: 未运行
 - Merge: 未执行
-- 当前状态: NOT_STARTED
-- 下一步: 启动 GitHub Gate。
+- 当前状态: BLOCKED_AUTH
+- 阻塞原因: `origin` 已配置为 `https://github.com/yangxiamike/ai-eastaura.git`，但 `gh auth status` 显示未登录；`git push -u origin codex-eng-wb-csv-real-testing` 未成功返回；当前工作区仍有无关未提交改动，不能混入本 PR。
+- 下一步: 完成 `gh auth login` 或设置有效 `GH_TOKEN` 后，重新 push branch 并创建 PR。
 
 ## 当前状态
 
-`TEST_PASS_PENDING_GITHUB_GATE`
+`BLOCKED`
 
-说明：API 合约真实测试与第 5 轮 browser-flow 子 Agent 测试均已 PASS。GitHub Gate 未启动，因此不得标记最终 PASS。
+说明：API 合约真实测试与第 5 轮 browser-flow 子 Agent 测试均已 PASS。GitHub Gate 已尝试启动，但因 GitHub auth/push 阻塞无法创建 PR / CI / Review / Merge，因此不得标记最终 PASS。
 
 ## 第五轮测试结果
 
@@ -215,4 +217,4 @@
 
 ## 交付要求
 
-下一步进入 GitHub Gate：branch / PR / CI / Review / Merge；完成后再更新最终 PASS 状态。
+下一步解除 GitHub Gate auth/push 阻塞：完成 `gh auth login` 或提供有效 `GH_TOKEN`，重新 push branch，创建 PR / CI / Review / Merge；完成后再更新最终 PASS 状态。

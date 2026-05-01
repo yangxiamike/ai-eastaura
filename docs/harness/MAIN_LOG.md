@@ -38,6 +38,7 @@
 | 2026-05-01 17:06 +08:00 | Dev 修复 browser-flow 失败项：Lead Detail 对 `usingFallback` 且响应 lead id 与 URL id 不一致的结果进入 `Lead not found` 空状态 | ENG-WB-CSV-001 | Dev | dev-fix-browser-flow | GPT-5 | `browser-flow-tester-4` 报告与证据 | `workbecnch-ui-2/app-old/src/app/workbench/leads/[id]/page.tsx` | DONE |
 | 2026-05-01 17:09 +08:00 | 执行 `browser-flow-tester-5` 子 Agent 复验：固定/动态 lead 导出、Exporting 状态、请求边界、浏览器侧 token 暴露、console/pageerror 和不存在 lead 页面均通过 | ENG-WB-CSV-001 | Test | browser-flow-tester-5 | GPT-5 | Dev 修复后的 local root/workbench dev server | `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-5.md`; `docs/harness/evidence/ENG-WB-CSV-001-browser-flow-tester-5-browser-evidence.md` | PASS |
 | 2026-05-01 17:11 +08:00 | Coordinator 汇总：`api-contract-tester-3` PASS + `browser-flow-tester-5` PASS；Workbench lint、TypeScript、harness rg、git status 完成；状态更新为等待 GitHub Gate | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | reports `api-contract-tester-3` / `browser-flow-tester-5` | `docs/harness/RUNTIME_INDEX.md`; `docs/harness/ACTIVE_TASK.md`; `docs/harness/MAIN_LOG.md` | TEST_PASS_PENDING_GITHUB_GATE |
+| 2026-05-01 17:45 +08:00 | GitHub Gate 启动前置复查：remote 已配置为 `https://github.com/yangxiamike/ai-eastaura.git`，但 `gh auth status` 未登录，`git push -u origin codex-eng-wb-csv-real-testing` 未成功返回；保持不混入无关工作区改动，任务标记为 GitHub Gate auth/push BLOCKED | ENG-WB-CSV-001 | Coordinator | local-codex | GPT-5 | git remote; gh auth; git push | `docs/harness/RUNTIME_INDEX.md`; `docs/harness/ACTIVE_TASK.md`; `docs/harness/MAIN_LOG.md` | BLOCKED |
 
 ## 本轮说明
 
@@ -47,7 +48,7 @@
 - Dev 修复：Lead Detail 识别 mismatch fallback，不再把与 URL id 不一致的 fallback lead 当作当前 lead 渲染。
 - `browser-flow-tester-5`：PASS，固定/动态 lead 导出、请求边界、浏览器侧 token 暴露、console/pageerror、不存在 lead 页面均通过。
 - Coordinator 静态验证：Workbench `npm run lint` 与 `npx tsc --noEmit` 通过，harness `rg` 与 `git status --short` 已执行。
-- GitHub Gate 未启动；当前状态为 `TEST_PASS_PENDING_GITHUB_GATE`，不得标记最终 PASS。
+- GitHub Gate 已尝试启动但因 `gh` 未登录 / push 未成功而 BLOCKED；当前状态为 `BLOCKED`，不得标记最终 PASS。
 
 
 
