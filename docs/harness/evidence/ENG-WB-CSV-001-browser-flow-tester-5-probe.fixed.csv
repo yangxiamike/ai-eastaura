@@ -1,0 +1,2 @@
+"id","createdAt","status","fullName","email","country","source","riskLevel","intentScore","fitScore","riskScore","goals","preferredTiming","budgetUsd"
+"4960b5ca-dbef-4d75-b5cf-08e58adc01b1","2026-04-28T16:10:46.78548+00:00","triaged","Content Pipeline QA 20260428161043875-4j1on7","qa-content-20260428161043875-4j1on7@example.com","United States","instagram","low","65","71","0","Stress recovery; Sleep reset","September 2026","2800"

@@ -1,0 +1,2 @@
+"id","createdAt","status","fullName","email","country","source","riskLevel","intentScore","fitScore","riskScore","goals","preferredTiming","budgetUsd"
+"4edd10c5-c45e-486c-a5d2-36e997d3f555","2026-04-28T09:46:44.879951+00:00","triaged","Notification QA 20260428094648567-987l44","qa-notify-20260428094648567-987l44@example.com","United States","qa_notification_verify","low","20","63","0","Stress recovery","",""

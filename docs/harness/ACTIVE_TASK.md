@@ -18,7 +18,14 @@
 
 ## 本轮只解决
 
-本轮已从真实运行态推进到 Dev + Test：实现 CSV export，并完成既有 `api-contract-tester` 与 `browser-flow-tester` 验收。2026-05-01 的第二轮多 Agent 真实复验中，`api-contract-tester` PASS，但 `browser-flow-tester` 子 Agent 因 browser-use 后端不可用而 BLOCKED；Coordinator 浏览器诊断不能替代该岗位验收。GitHub Gate 尚未启动。
+本轮按用户要求调用子 Agent 执行完整 harness 流程，重点收口之前未完成的 browser flow。
+
+- `api-contract-tester-3`: PASS。
+- `browser-flow-tester-4`: FAIL。Playwright-first browser flow 可执行；固定 lead 与动态 lead 导出通过，但不存在 lead 页面在 root 404 后仍展示 fallback `Sarah Mitchell` 与 `Export CSV`。
+- Dev 修复：在 Lead Detail 页面识别 `usingFallback` 且响应 lead id 与 URL id 不一致的情况，进入 `Lead not found` 空状态，避免渲染 fallback lead 和导出按钮。
+- `browser-flow-tester-5`: PASS。固定 lead、动态 lead、请求边界、浏览器侧 token 暴露、console/pageerror、下载状态和不存在 lead 页面均通过。
+- Coordinator 静态验证：`npm run lint` PASS，`npx tsc --noEmit` PASS，harness `rg` 与 `git status --short` 已执行。
+- GitHub Gate 尚未启动；当前状态为 `TEST_PASS_PENDING_GITHUB_GATE`。
 
 ## 对应 PRD 条目
 
@@ -31,6 +38,7 @@
 - `docs/harness/ACCEPTANCE.md`
 - `docs/harness/BUILD_PLAN.md`
 - `docs/harness/ARCH_BOUNDARY.md`
+- `docs/harness/ENG-WB-CSV-001_NEXT_AGENT_RUN.md`
 
 ## 主要依据
 
@@ -39,6 +47,7 @@
 - Workbench 浏览器侧只访问 `/api/workbench/*`。
 - Workbench 服务端通过 `fetchRootApi()` 访问根 API 并服务端注入 admin token。
 - 根项目已有 `GET /api/leads/export`，但不明显支持 `id` 精确筛选。
+- Browser-flow 岗位采用 Playwright-first，由 Test 子 Agent 自己运行项目脚本或临时 probe。
 
 ## 只作参考
 
@@ -48,21 +57,15 @@
 
 ## 输出文件
 
-- `docs/harness/RUNTIME_INDEX.md`
-- `docs/harness/PRD.md`
-- `docs/harness/ENGINEERING_BASELINE.md`
-- `docs/harness/ACCEPTANCE.md`
-- `docs/harness/BUILD_PLAN.md`
-- `docs/harness/ARCH_BOUNDARY.md`
-- `docs/harness/ACTIVE_TASK.md`
+- `docs/harness/reports/ENG-WB-CSV-001-api-contract-tester-3.md`
+- `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-4.md`
+- `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-5.md`
+- `docs/harness/evidence/ENG-WB-CSV-001-browser-flow-tester-4-*`
+- `docs/harness/evidence/ENG-WB-CSV-001-browser-flow-tester-5-*`
 - `docs/harness/MAIN_LOG.md`
-- `docs/harness/reports/ENG-WB-CSV-001-api-contract-tester-2.md`
-- `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-2.md`
-- `docs/harness/ENG-WB-CSV-001_NEXT_AGENT_RUN.md`
-
-## 输出要求
-
-运行态文件记录当前真实 Dev/Test 结果，并明确 GitHub Gate 尚未启动。
+- `docs/harness/RUNTIME_INDEX.md`
+- `docs/harness/ACTIVE_TASK.md`
+- `D:\智能体循环\CONTEXT.md`
 
 ## 验收标准引用
 
@@ -70,14 +73,14 @@
 
 ## 对应 Acceptance 验收项
 
-- CSV-01
-- CSV-02
-- CSV-03
-- CSV-04
-- CSV-05
-- CSV-DATA-01
-- CSV-UI-01
-- CSV-SEC-01
+- CSV-01: PASS，固定 lead 与动态 lead 页面均出现 CSV export 按钮且可点击。
+- CSV-02: PASS，浏览器导出请求只访问 `/api/workbench/leads/{id}/export/`，未请求根 `/api/leads/export`。
+- CSV-03: PASS，第三轮 API 合约真实测试已确认 Workbench export route 返回单条 lead CSV。
+- CSV-04: PASS，API 侧与浏览器侧均未发现 admin token / Authorization / Bearer 暴露。
+- CSV-05: PASS，API 负向为非 2xx；浏览器不存在 lead 页面已收敛为 `Lead not found`，不永久 loading，不显示导出按钮。
+- CSV-DATA-01: PASS，API 合约测试确认 header 与根 export 字段一致。
+- CSV-UI-01: PASS，正向点击不阻断页面，按钮从 `Exporting CSV...` 恢复为 `Export CSV`。
+- CSV-SEC-01: PASS，改动未扩散到根 auth、根数据模型或无关 API。
 
 ## 边界说明引用
 
@@ -85,11 +88,7 @@
 
 ## 是否触发 Architecture
 
-是，必须触发。
-
-## Architecture 触发原因
-
-涉及 Workbench proxy、根 API、admin token 和 CSV 契约边界。
+已触发，边界已固化。
 
 ## 本任务能力标签
 
@@ -99,12 +98,7 @@
 
 ## 本任务启用 Skill
 
-- `browser-flow-tester` 后续真实执行时启用 `browser-use:browser`。
-
-## 本任务 Agent 模型
-
-- Coordinator / Planner / Architecture：`gpt-5.5`
-- Dev / Test：`gpt-5.3`
+- `browser-flow-tester` 使用 Playwright-first 工作流；本轮由 Test 子 Agent 创建临时 Playwright probe 并写证据。
 
 ## 本任务测试岗位
 
@@ -120,18 +114,27 @@
 
 - 下载类 Workbench 任务默认通过 `/api/workbench/*` 服务端代理访问根 API。
 - 已有根 export endpoint 不等于天然支持单条 lead 导出。
+- browser-flow 岗位不得由 Coordinator 代测；Playwright-first 证据可由 Test 子 Agent 使用临时 probe 采集。
+- Workbench fallback detail 如果返回的 fallback lead id 与 URL id 不一致，页面不得把 fallback 数据当作当前 lead 展示。
 
 ## UI baseline 判断
 
 不触发 UI baseline。本任务不是视觉维护任务。
 
-## 界面基线引用
-
-无。
-
 ## 允许修改范围
 
-本轮实际修改：
+本轮新增/更新范围：
+
+- `workbecnch-ui-2/app-old/src/app/workbench/leads/[id]/page.tsx`
+- `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-4.md`
+- `docs/harness/reports/ENG-WB-CSV-001-browser-flow-tester-5.md`
+- `docs/harness/evidence/ENG-WB-CSV-001-browser-flow-tester-4-*`
+- `docs/harness/evidence/ENG-WB-CSV-001-browser-flow-tester-5-*`
+- `docs/harness/ACTIVE_TASK.md`
+- `docs/harness/RUNTIME_INDEX.md`
+- `docs/harness/MAIN_LOG.md`
+
+既有产品改动范围：
 
 - `workbecnch-ui-2/app-old/src/app/workbench/leads/[id]/page.tsx`
 - `workbecnch-ui-2/app-old/src/app/api/workbench/leads/[id]/export/route.ts`
@@ -154,54 +157,62 @@
 
 ## 可独立验收方式
 
-- `git status --short` 确认产品代码改动仅在允许范围内，且未触碰禁止范围。
-- `rg -n "ENG-WB-CSV-001|api-contract-tester|browser-flow-tester|/api/workbench/leads" docs/harness` 确认关键运行态信息存在。
-- `npm run lint` in `workbecnch-ui-2/app-old`。
-- `npx tsc --noEmit` in `workbecnch-ui-2/app-old`。
-- 本地 API contract 验证 Workbench export route。
-- Browser skill 验证 Lead Detail 按钮与点击状态。
+已执行：
+
+- `npm run lint` in `workbecnch-ui-2/app-old` -> PASS。
+- `npx tsc --noEmit` in `workbecnch-ui-2/app-old` -> PASS。
+- `rg -n "ENG-WB-CSV-001|api-contract-tester|browser-flow-tester|/api/workbench/leads" D:\work\ai-eastaura\docs\harness` -> 第 4/5 轮报告与证据均命中。
+- `git status --short` -> 已记录当前工作树状态。
+- API 合约真实测试 -> PASS，见 `reports/ENG-WB-CSV-001-api-contract-tester-3.md`。
+- Browser-flow 第 4 轮 -> FAIL，见 `reports/ENG-WB-CSV-001-browser-flow-tester-4.md`。
+- Dev 修复 -> DONE，Lead Detail mismatch fallback 不再渲染为当前 lead。
+- Browser-flow 第 5 轮 -> PASS，见 `reports/ENG-WB-CSV-001-browser-flow-tester-5.md` 与 `evidence/ENG-WB-CSV-001-browser-flow-tester-5-browser-evidence.md`。
 
 ## 预期风险
 
-- 真实执行前缺少可用 lead id / fixture。
-- 需要确认是否允许 Workbench export route 自行生成单条 CSV。
-- 若未来要求完全复用根 export API，需要重新评估根 `LeadExportQuery` 是否支持 id 精确筛选。
+- 本轮验证基于本地 dev server，未验证远端部署。
+- Playwright probe 为捕捉瞬时 `Exporting CSV...` 对 export 请求增加 700ms `route.continue()` 延迟；未 mock 响应。
+- 无效 id 当前 API 侧返回 `500`，满足非 2xx 验收，但后续可产品化为 `400`。
 
 ## 阻塞处理提示
 
-- 缺少 lead id / fixture：返回 `BLOCKED`，请求用户提供测试数据或允许建立 fixture。
-- 不允许 Workbench route 自行生成 CSV：返回 Architecture 重新设计。
+- 当前无 Test 阻塞。
+- 若进入 GitHub Gate 后 CI 或 Review 失败，应回到原 Dev 修复，再重跑相关失败测试岗位。
 
 ## 完成判断
 
-本轮完成判断：Dev 实现完成，既有 `api-contract-tester` 和 `browser-flow-tester` 均 PASS；第二轮多 Agent 复验未完成，`browser-flow-tester` 为 BLOCKED。
+当前必需测试岗位已通过：
 
-真实任务最终完成判断：GitHub Gate 完成后才最终 PASS。
+- `api-contract-tester-3`: PASS。
+- `browser-flow-tester-5`: PASS。
+
+真实任务最终完成判断：进入 GitHub Gate，并在 CI / Review / Merge 完成且状态文件更新后才最终 PASS。
 
 ## GitHub Gate
 
-- branch: 未创建
+- branch: 当前本地分支 `codex-eng-wb-csv-real-testing`
 - PR: 未创建
 - CI: 未运行
 - Review: 未运行
 - Merge: 未执行
 - 当前状态: NOT_STARTED
-- 不适用原因: 必需 Test 已 PASS，但本轮未执行 branch / PR / CI / Review / Merge
+- 下一步: 启动 GitHub Gate。
 
 ## 当前状态
 
 `TEST_PASS_PENDING_GITHUB_GATE`
 
-说明：Dev 和既有必需测试岗位均已通过；第二轮多 Agent 真实复验没有形成完整 PASS 证据；尚未执行 GitHub Gate。
+说明：API 合约真实测试与第 5 轮 browser-flow 子 Agent 测试均已 PASS。GitHub Gate 未启动，因此不得标记最终 PASS。
 
-## 第二轮复验阻塞
+## 第五轮测试结果
 
-- `api-contract-tester-2`: PASS。
-- `browser-flow-tester-2`: BLOCKED，子 Agent 无法连接 browser-use / in-app browser 后端。
-- Coordinator 主线程浏览器诊断不得替代 `browser-flow-tester` 岗位验收。
-- 若要以第二轮复验作为推进依据，必须重跑 `browser-flow-tester` 并取得子 Agent 自己的 PASS 报告。
-- 下一会话按 `ENG-WB-CSV-001_NEXT_AGENT_RUN.md` 顺序调 `api-contract-tester-3`、`browser-flow-tester-3` 和 Coordinator 汇总。
+- `browser-flow-tester-5`: PASS。
+- 正向固定 lead 与动态 lead 导出均观察到 `Exporting CSV...` -> `Export CSV`，下载成功，URL 不跳走。
+- 浏览器请求只访问 `/api/workbench/leads/{id}/export/`，未访问根 `/api/leads/export`。
+- 浏览器请求 URL/header、storage、cookie、页面文本和 DOM 未发现 admin token / Authorization / Bearer。
+- 不存在 lead 页面显示 `Lead not found`，不显示 `Sarah Mitchell`，不显示 `Export CSV`。
+- Coordinator 静态验证: `npm run lint` PASS，`npx tsc --noEmit` PASS。
 
 ## 交付要求
 
-后续真实 Dev 必须遵守 `ARCH_BOUNDARY.md`，并在实现后生成对应测试报告。
+下一步进入 GitHub Gate：branch / PR / CI / Review / Merge；完成后再更新最终 PASS 状态。
