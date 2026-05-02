@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -L \"https://html.duckduckgo.com/html/?q=*\")",
+      "WebFetch",
+      "WebSearch"
+    ]
+  }
+}

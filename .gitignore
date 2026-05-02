@@ -19,5 +19,7 @@ Thumbs.db
 .chrome-profile-*/
 .edge-profile/
 _tmp_*/
+.tmp-*.log
+.tmp-*.err.log
 
 .vercel

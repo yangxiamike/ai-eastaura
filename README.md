@@ -4,6 +4,10 @@
 
 Eastaura 是一个面向海外用户的中国中医康养体验品牌。目标是整合国内中医机构、翻译、住宿、接送和康养服务，面向海外人群推出以压力恢复、睡眠改善、精力管理和身心调理体验为核心的来华康养套餐。
 
+## Agent 入口
+
+后续 Agent 先读 `CONTEXT.md` 确认当前主线，再读 `docs/entry/AGENT_ONBOARDING.md` 获取渐进暴露入口。需要追历史或专项材料时看 `docs/entry/INDEX.md`；需要复用经验时看 `docs/entry/LESSONS.md`；需要判断缓存、旧原型和废弃候选时看 `docs/entry/CLEANUP_INVENTORY_2026-05-02.md`。
+
 ## 技术栈
 
 当前已进入 MVP 后端骨架、公开 Website 和内容获客闭环开发。现有实现采用 Next.js App Router、TypeScript、Supabase repository 适配层和版本化 Skill 文件；公开官网使用 App Router 页面、共享内容数据和全局 CSS 实现，并已按 boutique luxury wellness 方向重做首页桌面视觉。官网 `/intake` 已接入真实 `POST /api/intake`，可创建 Lead、AI triage、通知记录和 UTM/内容归因字段。新版 Workbench 原型位于 `workbecnch-ui-2/app-old/`，已支持系统界面中英文切换，并通过服务端代理读取根项目 Lead、Dashboard、Notification、Content、Review、Publishing 和 Attribution API；根 API 不可用时保留 mock fallback。未配置真实密钥时默认使用内存 mock，配置 Supabase/LLM 环境变量后可切换到真实数据库和模型接口。
@@ -201,6 +205,10 @@ CI 已内置 `.github/workflows/verify.yml`：
 - `README.md`：项目整体说明。
 - `ARCHITECTURE.md`：业务模块与关键设计决策。
 - `CONTEXT.md`：当前进度、决定、阻塞和下一步。
+- `docs/entry/AGENT_ONBOARDING.md`：后续 Agent 渐进暴露入口。
+- `docs/entry/INDEX.md`：文档索引和历史材料入口。
+- `docs/entry/LESSONS.md`：后续 Agent 可复用经验库。
+- `docs/entry/CLEANUP_INVENTORY_2026-05-02.md`：缓存、旧原型和清理候选清单。
 - `src/app/api/`：MVP 后端 API 路由。
 - `src/app/(public pages)`：公开 Website 页面，包括首页、Program、Safety、Insights、Intake 和 Thank You。
 - `src/components/site/`：公开 Website 的导航、页脚、表单、时间线、图标和复用展示组件。
@@ -210,6 +218,9 @@ CI 已内置 `.github/workflows/verify.yml`：
 - `workbecnch-ui-2/app-old/`：新版 Workbench Next.js 原型，覆盖内容、视频、日历、归因、线索、审核、通知、Skill、设置和合作方资产页面；`src/lib/workbench/i18n.ts` 与 `LanguageProvider` 提供系统级中英文切换，`src/app/api/workbench/` 提供服务端代理，Dashboard/Leads/Lead Detail/Notifications/Content/Review/Publishing/Attribution 已接入真实根 API。
 - `supabase/migrations/`：Supabase 表结构 migration。
 - `skills/`：版本化 Skill 文档、schema 和示例。
-- `docs/PRD.md`：Eastaura 产品需求文档。
-- `docs/MVP_SYSTEM_DESIGN.md`：MVP 系统设计文档。
-- `docs/ACQUISITION_TECH_IMPLEMENTATION_PLAN_2026-04-27.md`：获客系统技术实现梳理，覆盖知识库、Agent/Skill、分镜、图片/图生视频 API、编排和落地路线。
+- `docs/reference/PRD.md`：Eastaura 产品需求文档。
+- `docs/reference/MVP_SYSTEM_DESIGN.md`：MVP 系统设计文档。
+- `docs/plans/BUSINESS_CONTENT_PLAN_2026-05-02.md`：当前商业内容主线计划，覆盖套餐履约、获客推广、线索转化和试运营。
+- `docs/plans/SYSTEM_PLAN_2026-05-02.md`：当前系统支撑计划，覆盖官网、Workbench、API、通知、归因、验证和 harness 边界。
+- `docs/plans/NEXT_STEP_PLAN_2026-04-28.md`：下一步计划索引，指向商业内容 plan 和系统 plan。
+- `docs/plans/ACQUISITION_TECH_IMPLEMENTATION_PLAN_2026-04-27.md`：获客系统技术实现梳理，覆盖知识库、Agent/Skill、分镜、图片/图生视频 API、编排和落地路线。
